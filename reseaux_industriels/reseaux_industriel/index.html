@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Instruction memoire entreprise - Cours - GJ enterprise</title>
+  <title>Réseaux industriels - Cours - GJ enterprise</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Instruction memoire entreprise";
-    var mkdocs_page_input_path = "memoire_entreprise/instruction_memoire_entreprise.md";
+    var mkdocs_page_name = "R\u00e9seaux industriels";
+    var mkdocs_page_input_path = "reseaux_industriels/reseaux_industriel.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -57,15 +57,17 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Memoire entreprise</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Instruction memoire entreprise</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../memoire_entreprise/instruction_memoire_entreprise/">Instruction memoire entreprise</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Reseaux industriels</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../reseaux_industriels/reseaux_industriel/">Réseaux industriels</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Réseaux industriels</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#machine-outil">Machine outil</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -89,11 +91,11 @@
     
       
         
-          <li>Memoire entreprise &raquo;</li>
+          <li>Reseaux industriels &raquo;</li>
         
       
     
-    <li>Instruction memoire entreprise</li>
+    <li>Réseaux industriels</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -104,37 +106,34 @@
           <div role="main">
             <div class="section">
               
-                <p><strong> /!\ ALL IN ENGLISH  /!\ </strong></p>
-<h1 id="presenter-lentreprise-et-les-differents-serivces">Présenter l'entreprise et les différents serivces</h1>
+                <h1 id="reseaux-industriels">Réseaux industriels</h1>
+<p>Voici une usine à Thé, tous les composants sont contrôlés par un controleur </p>
+<p><img alt="" src="../images/usine_the.png" /></p>
 <ul>
-<li>Votre rôle dans le service (sans rentrer dans les détails mais liste exaustive des missions)</li>
-<li>présenter le chiffre d'affaire, les budgets</li>
-<li>qui sont les clients ? Comment l'entreprise gagne des sous</li>
-<li>qui est dans le service, les managers, la hierarchie</li>
+<li>
+<p>Le PLC (boitier de commande), gère les capteurs (actionneurs) et les moteurs.</p>
+</li>
+<li>
+<p>Par la suite on a connecté c'est boitier de commande à un poste de supervision (SCADA) pour gérer plusieurs systèmes industriels à distances.</p>
+</li>
+<li>
+<p>Un système de contrôle SCADA permet de recevoir des données depuis les boitier de commande, mais aussi les contrôler ! En piratant le PC de supervision, on peut contrôler l'ensemble des réseaux industriels.</p>
+</li>
+<li>
+<p>Tous ces composants ont des firmware, très peu mis à jour. ==&gt; <strong>STUXNET</strong></p>
+</li>
 </ul>
-<h1 id="remercier">Remercier</h1>
+<h2 id="machine-outil">Machine outil</h2>
 <ul>
-<li>entreprise</li>
-<li>MA</li>
-<li>manager et differents membres de l'équipe, CFA, ITECIA</li>
+<li>Bus capteur : ASI, Seriplex</li>
+<li>Bus actionneur : interbus</li>
+<li>Bus de terrain (device bus): Modbus, interbus-S, profibus, device net</li>
 </ul>
-<h1 id="lister-toues-vos-actionsmisisonstaches-quotidiennes">Lister toues vos actions/misisons/tâches quotidiennes</h1>
-<p>=&gt; choisir les missions à développer (Environ 3 situations) (si pleins de petites choses, peut en faire plus)
-* entretient annuel
-* indicateur de qualité (si existant)</p>
-<h2 id="situation">Situation</h2>
+<p><img alt="ASI" src="ASI.jpg" title="Bus ASI" /> <img alt="Seriplex" src="seriplex.gif" title="Bus seriplex" /> <img alt="interbus" src="interbus.png" title="Bus interbus" /> <img alt="modbus" src="modbus.png" title="Bus Modbus" /> <img alt="profibus" src="profibus.png" title="Bus profibus" /> <img alt="devicenet" src="devicenet.jpg" title="Bus device net" /></p>
+<p><strong>Machine</strong> (pilotage et/ou process) =&gt; machine discute avec PLC ou SCADA</p>
 <ul>
-<li>date début/fin</li>
-<li>objectif / problèmes régler</li>
-<li>Impact</li>
-<li>Définir le cadre (tensions, problèmes internes à l'équipe, humain)</li>
+<li>Bus fieldbus (bus locaux), Flipway, profibus, FMS</li>
 </ul>
-<h1 id="avis-critique-sur-levolution-forces-et-faiblesses">Avis critique sur l'évolution, forces et faiblesses</h1>
-<ul>
-<li>methode SWAT (strengh / weakness/ ....)</li>
-<li>Montrer une évolution</li>
-</ul>
-<p>Montrer que l'on est prêt à être cadre débutant</p>
               
             </div>
           </div>
@@ -142,10 +141,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../reseaux_industriels/reseaux_industriel/" class="btn btn-neutral float-right" title="Réseaux industriels">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../../management/proteger_le_travail/" class="btn btn-neutral" title="Proteger le travail"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../memoire_entreprise/instruction_memoire_entreprise/" class="btn btn-neutral" title="Instruction memoire entreprise"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -171,10 +168,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../management/proteger_le_travail/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../memoire_entreprise/instruction_memoire_entreprise/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../../reseaux_industriels/reseaux_industriel/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
