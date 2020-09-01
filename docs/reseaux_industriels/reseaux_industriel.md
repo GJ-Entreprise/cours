@@ -77,3 +77,13 @@ Ex : Le bouton d'arrêt d'urgence ne peut être gérer par ethernet (best effort
 ![](../images/modbus_ADU_serie.png)
 
 __Adresse escalve null => Broadcast__
+
+![](../images/modbus_ADU_ethernet.png)
+
+__MBAP__ : 
+- Transaction ID : (2 octets, encodé en ASCII), défini par le client (esclave), réutilisé par le serveur pour parler au client.
+- Protocol ID : (2 octets), toujours à 0000.
+- Length : (2 octets), longueur du message qui va suivre (octets)
+- Unit ID : (2 octets), numéro (adresse) de l'esclave
+
+![](../images/modbus_ADU_ethernet_2.png)
