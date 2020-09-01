@@ -1,5 +1,7 @@
 # Réseaux industriels
 
+## Presentation
+
 Voici une usine à Thé, tous les composants sont contrôlés par un controleur 
 
 ![](../images/usine_the.png)
@@ -12,6 +14,7 @@ Voici une usine à Thé, tous les composants sont contrôlés par un controleur
 
 * Tous ces composants ont des firmware, très peu mis à jour. => __STUXNET__
 
+## Les Bus
 
 __Machine outil (pilotage)(machine autonome)__
 
@@ -21,7 +24,7 @@ __Machine outil (pilotage)(machine autonome)__
 
 <img src="../images/ASI.jpg" width="200"/> <img src="../images/seriplex.gif" width="200"/>
 
-![ASI](../images/ASI.jpg "Bus ASI") ![Seriplex](../images/seriplex.gif "Bus seriplex") ![interbus](../images/interbus.png "Bus interbus") ![modbus](../images/modbus.png "Bus Modbus") ![profibus](../images/profibus.png "Bus profibus") ![devicenet](../images/devicenet.jpg "Bus device net")
+![ASI](../images/asi.jpg "Bus ASI") ![Seriplex](../images/seriplex.gif "Bus seriplex") ![interbus](../images/interbus.png "Bus interbus") ![modbus](../images/modbus.png "Bus Modbus") ![profibus](../images/profibus.png "Bus profibus") ![devicenet](../images/devicenet.jpg "Bus device net")
 
 
 __Machine__ (pilotage et/ou process) => machine discute avec PLC ou SCADA
@@ -41,3 +44,6 @@ __Bus entre cartes electroniques et une machine__
 
 * Bus D2B : < 100m très utile (enciennement) en domotique.
 
+## Contraintes industrielles
+
+* Determinisme : c'est quand le comportement (notion de temps) des sorties est totalement prévisible en fonction des valeurs des entrées.
