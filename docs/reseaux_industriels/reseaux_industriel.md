@@ -19,6 +19,8 @@ __Machine outil (pilotage)(machine autonome)__
 * Bus actionneur : interbus
 * Bus de terrain (device bus): Modbus, interbus-S, profibus, device net
 
+<img src="../images/ASI.jpg" width="200"/> <img src="../images/seriplex.gif" width="200"/>
+
 ![ASI](../images/ASI.jpg "Bus ASI") ![Seriplex](../images/seriplex.gif "Bus seriplex") ![interbus](../images/interbus.png "Bus interbus") ![modbus](../images/modbus.png "Bus Modbus") ![profibus](../images/profibus.png "Bus profibus") ![devicenet](../images/devicenet.jpg "Bus device net")
 
 
@@ -31,6 +33,11 @@ __pilotage des processus__ (SCADA)
 * Ethernet, MMS
 
 
+__Bus entre cartes electroniques et une machine__
 
+* Bus I2C : interconnection des cartes electroniques entre elles, ou entre composants sur une même carte électronique.
 
+* Bus CAN : relier 2 cartes electronique entre elles (< 1km)
+
+* Bus D2B : < 100m très utile (enciennement) en domotique.
 
