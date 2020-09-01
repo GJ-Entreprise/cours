@@ -60,3 +60,20 @@ Ex : Le bouton d'arrêt d'urgence ne peut être gérer par ethernet (best effort
 
 * Token ring : Chacun a la parole pendant un temps, si un tombe en panne tout se casse la gueulle. Débit faible.
 ![](../images/token_ring.png)
+
+## Presentation des Bus
+### Modbus
+
+* Créé en 1979, bus et protocole de communication sur le modèle maître/esclave.
+    - RS232 (1 maître (actif ou passif), 115 kb/s, 15 mètres)
+    - RS422 (plus utilisé)
+    - RS485 (rétrocompatible RS232)
+
+* Basé sur un modèle requête / réponse
+* structuré en PDU (Protocol Data Unit) identique en serie ou ethernet. et en ADU (Application Data Unit)
+
+![](../images/modbus_PDU.png)
+
+![](../images/modbus_ADU_serie.png)
+
+__Adresse escalve null => Broadcast__
