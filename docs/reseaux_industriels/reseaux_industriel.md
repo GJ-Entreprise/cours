@@ -10,23 +10,25 @@ Voici une usine à Thé, tous les composants sont contrôlés par un controleur
 
 * Un système de contrôle SCADA permet de recevoir des données depuis les boitier de commande, mais aussi les contrôler ! En piratant le PC de supervision, on peut contrôler l'ensemble des réseaux industriels.
 
-* Tous ces composants ont des firmware, très peu mis à jour. ==> __STUXNET__
+* Tous ces composants ont des firmware, très peu mis à jour. => __STUXNET__
 
 
-## Machine outil
+__Machine outil (pilotage)(machine autonome)__
 
 * Bus capteur : ASI, Seriplex
 * Bus actionneur : interbus
 * Bus de terrain (device bus): Modbus, interbus-S, profibus, device net
 
-![ASI](ASI.jpg "Bus ASI") ![Seriplex](seriplex.gif "Bus seriplex") ![interbus](interbus.png "Bus interbus") ![modbus](modbus.png "Bus Modbus") ![profibus](profibus.png "Bus profibus") ![devicenet](devicenet.jpg "Bus device net")
+![ASI](../images/ASI.jpg "Bus ASI") ![Seriplex](../images/seriplex.gif "Bus seriplex") ![interbus](../images/interbus.png "Bus interbus") ![modbus](../images/modbus.png "Bus Modbus") ![profibus](../images/profibus.png "Bus profibus") ![devicenet](../images/devicenet.jpg "Bus device net")
 
 
 __Machine__ (pilotage et/ou process) => machine discute avec PLC ou SCADA
 
 * Bus fieldbus (bus locaux), Flipway, profibus, FMS
 
+__pilotage des processus__ (SCADA)
 
+* Ethernet, MMS
 
 
 
