@@ -6,6 +6,8 @@ Voici une usine à Thé, tous les composants sont contrôlés par un controleur
 
 ![](../images/usine_the.png)
 
+![](../images/usine_the_2.png)
+
 * Le PLC (boitier de commande), gère les capteurs (actionneurs) et les moteurs.
 
 * Par la suite on a connecté c'est boitier de commande à un poste de supervision (SCADA) pour gérer plusieurs systèmes industriels à distances.
@@ -53,3 +55,8 @@ Ex : Le bouton d'arrêt d'urgence ne peut être gérer par ethernet (best effort
 * Prévisibilité : On sait de source sûr comment mon système se comporte en fonction des entrées/sorties.
 
 * Urgence : priorise le traitement des urgences en fonction de leur gravités.
+
+* Contraintes environnementales : corrosivité, explosivité, etc
+
+* Token ring : Chacun a la parole pendant un temps, si un tombe en panne tout se casse la gueulle. Débit faible.
+![](../images/token_ring.png)
