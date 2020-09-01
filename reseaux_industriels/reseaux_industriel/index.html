@@ -53,6 +53,8 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Management</span></p>
                 <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../management/STMicroelectronics/">STMicroelectronics</a>
+                    </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../management/proteger_le_travail/">Proteger le travail</a>
                     </li>
                 </ul>
@@ -63,6 +65,8 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Reseaux industriels</span></p>
                 <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../exercice_modbus/">Exercices modbus</a>
+                    </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Réseaux industriels</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#presentation">Presentation</a>
@@ -205,6 +209,13 @@
 <p><img alt="" src="../images/modbus_PDU.png" /></p>
 <p><img alt="" src="../images/modbus_ADU_serie.png" /></p>
 <p><strong>Adresse escalve null =&gt; Broadcast</strong></p>
+<p><img alt="" src="../images/modbus_ADU_ethernet.png" /></p>
+<p><strong>MBAP</strong> : 
+- Transaction ID : (2 octets, encodé en ASCII), défini par le client (esclave), réutilisé par le serveur pour parler au client.
+- Protocol ID : (2 octets), toujours à 0000.
+- Length : (2 octets), longueur du message qui va suivre (octets)
+- Unit ID : (2 octets), numéro (adresse) de l'esclave</p>
+<p><img alt="" src="../images/modbus_ADU_ethernet_2.png" /></p>
               
             </div>
           </div>
@@ -213,7 +224,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../../memoire_entreprise/instruction_memoire_entreprise/" class="btn btn-neutral" title="Instruction memoire entreprise"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../exercice_modbus/" class="btn btn-neutral" title="Exercices modbus"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -239,7 +250,7 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../memoire_entreprise/instruction_memoire_entreprise/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../exercice_modbus/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
