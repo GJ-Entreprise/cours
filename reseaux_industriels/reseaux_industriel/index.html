@@ -71,6 +71,12 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#contraintes-industrielles">Contraintes industrielles</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#presentation-des-bus">Presentation des Bus</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#modbus">Modbus</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -180,6 +186,25 @@
 <img alt="" src="../images/token_ring.png" /></p>
 </li>
 </ul>
+<h2 id="presentation-des-bus">Presentation des Bus</h2>
+<h3 id="modbus">Modbus</h3>
+<ul>
+<li>
+<p>Créé en 1979, bus et protocole de communication sur le modèle maître/esclave.</p>
+<ul>
+<li>RS232 (1 maître (actif ou passif), 115 kb/s, 15 mètres)</li>
+<li>RS422 (plus utilisé)</li>
+<li>RS485 (rétrocompatible RS232)</li>
+</ul>
+</li>
+<li>
+<p>Basé sur un modèle requête / réponse</p>
+</li>
+<li>structuré en PDU (Protocol Data Unit) identique en serie ou ethernet. et en ADU (Application Data Unit)</li>
+</ul>
+<p><img alt="" src="../images/modbus_PDU.png" /></p>
+<p><img alt="" src="../images/modbus_ADU_serie.png" /></p>
+<p><strong>Adresse escalve null =&gt; Broadcast</strong></p>
               
             </div>
           </div>
