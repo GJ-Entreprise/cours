@@ -36,6 +36,7 @@ Options:
 ```
 
 __A l’aide de la commande modbus read, lisez les 5 premiers registres de type bit__
+
 ```
 sudo modbus 192.168.43.161 1 5
 ```
@@ -47,9 +48,72 @@ sudo modbus 192.168.43.161 1 5
 5          1
 ```
 
+![](../images/exercice/modbus_1.png)
+
+__A l’aide de la commande modbus read, isez les 5 premiers registres entiers__
+
 ```
-sudo modbus -i 192.168.43.161 1 5
+sudo modbus read 192.168.43.161 400001 5
 ```
+```
+400001         17
+400002         17
+400003         17
+400004         17
+400005         17
+```
+
+![](../images/exercice/modbus_2.png)
+
+__A l’aide de write, modifier un entier parmi les 5 premiers entiers__
+
+```
+sudo modbus write -h
+```
+
+```
+Usage:
+    modbus write [OPTIONS] HOST ADDRESS VALUES ...
+
+Parameters:
+    HOST                             IP address or hostname for the Modbus device
+    ADDRESS                          Start address (eg %M100, %MW100, 101, 400101)
+    VALUES ...                       values to write, nonzero counts as true for discrete values
+
+Options:
+    -w, --word                       use unsigned 16 bit integers
+    -i, --int                        use signed 16 bit integers
+    -d, --dword                      use unsigned 32 bit integers
+    -f, --float                      use signed 32 bit floating point values
+    --modicon                        use Modicon addressing (eg. coil: 101, word: 400001)
+    --schneider                      use Schneider addressing (eg. coil: %M100, word: %MW0, float: %MF0, dword: %MD0)
+    -s, --slave ID                   use slave id ID (default: 1)
+    -p, --port PORT                  use TCP port (default: 502)
+    -D, --debug                      show debug messages
+    -T, --timeout TIMEOUT            Specify the timeout in seconds when talking to the slave
+    -C, --connect-timeout TIMEOUT    Specify the timeout in seconds when connecting to TCP socket
+    -h, --help                       print help
+```
+
+```
+sudo modbus write -i 192.168.43.161 400002 6
+```
+
+![](../images/exercice/modbus_3.png)
+
+```
+sudo modbus read -i 192.168.43.161 400002 1
+```
+
+```
+400002          6
+```
+
+__A l’aide de write, modifier un booléen parmi les 5 premiers booléens modifiables__
+
+
+
+
 
 
 ## Exercice 2 - Scan avec Nmap
