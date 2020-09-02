@@ -171,10 +171,106 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
 ```
 
-## Exercice 3
+![](../images/exercice/modbus_5.png)
+
+![](../images/exercice/modbus_6.png)
+
+## Exercice 3 - Recherche d'exploit
 
 __Trouver au moins un exploit existant dans exploit-db.com concernant un serveur modbus__
 
+![](../images/exercice/modbus_7.png)
+
+## Exercice 4 - Avec Scapy
+
+```
+ip=IP(src='192.168.118.128',dst='192.168.43.161')
+tcp=TCP(sport=6666,dport=502,flags='S')
+pkt=ip/tcp                                 
+pkt.show()      
+
+###[ IP ]### 
+  version= 4
+  ihl= None
+  tos= 0x0
+  len= None
+  id= 1
+  flags= 
+  frag= 0
+  ttl= 64
+  proto= tcp
+  chksum= None
+  src= 192.189.118.128
+  dst= 192.168.43.161
+  \options\
+###[ TCP ]### 
+     sport= 6666
+     dport= 502
+     seq= 0
+     ack= 0
+     dataofs= None
+     reserved= 0
+     flags= S
+     window= 8192
+     chksum= None
+     urgptr= 0
+     options= []
+
+send(pkt)
+```
+
+```
+answ=sr1(pkt)
+```
+
+```
+answ=sr1(pkt)                     
+Begin emission:
+.Finished sending 1 packets.
+*
+Received 2 packets, got 1 answers, remaining 0 packets
+```
+
+```
+answ.show()
+```
+
+```
+###[ IP ]### 
+  version= 4
+  ihl= 5
+  tos= 0x0
+  len= 44
+  id= 65409
+  flags= 
+  frag= 0
+  ttl= 128
+  proto= tcp
+  chksum= 0x17d8
+  src= 192.168.43.161
+  dst= 192.168.118.128
+  \options\
+###[ TCP ]### 
+     sport= 502
+     dport= 6666
+     seq= 1364939808
+     ack= 1
+     dataofs= 6
+     reserved= 0
+     flags= SA
+     window= 64240
+     chksum= 0xb836
+     urgptr= 0
+     options= [('MSS', 1460)]
+###[ Padding ]### 
+        load= '\x00\x00'
+```
+
+
+__Rechercher un framework (lmot clé smod?) pour scapy permettant de crafter des requetes vers des serveurs modbus__
+
+* Dans le script "asyncmodbus.py" utilisé pour créer le serveur, la library __pymodbus__ est utilisé.
+Voici la documentation : https://pymodbus.readthedocs.io/en/latest/index.html
 
 
 
