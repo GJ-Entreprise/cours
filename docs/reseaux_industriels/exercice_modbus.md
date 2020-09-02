@@ -111,10 +111,19 @@ sudo modbus read -i 192.168.43.161 400002 1
 
 __A l’aide de write, modifier un booléen parmi les 5 premiers booléens modifiables__
 
+```
+sudo modbus write 192.168.43.161 3 0
+```
 
+![](../images/exercice/modbus_4.png)
 
+```
+sudo modbus read 192.168.43.161 3 1
+```
 
-
+```
+3          0
+```
 
 ## Exercice 2 - Scan avec Nmap
 
@@ -144,18 +153,22 @@ https://nmap.org/nsedoc/scripts/modbus-discover.html
 ```
 
 ```
-nmap -sT -p502 --script modbus-discover 192.168.43.161
+nmap -p502 --script modbus-discover.nse 192.168.43.161
 ```
 
 ```
-Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-01 14:48 CEST
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-02 09:21 CEST
 Nmap scan report for 192.168.43.161
-Host is up (0.00087s latency).
+Host is up (0.0018s latency).
 
-PORT    STATE    SERVICE
-502/tcp filtered mbap
+PORT    STATE SERVICE
+502/tcp open  modbus
+| modbus-discover: 
+|   sid 0x1: 
+|     Slave ID data: PyModbus Inc.-PM-1.0\xFF
+|_    Device identification: PyModbus Inc. PM 1.0
 
-Nmap done: 1 IP address (1 host up) scanned in 0.50 seconds
+Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
 ```
 
 ## Exercice 3
