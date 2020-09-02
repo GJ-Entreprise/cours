@@ -80,6 +80,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#exercice-3-recherche-dexploit">Exercice 3 - Recherche d'exploit</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#exercice-4-avec-scapy">Exercice 4 - Avec Scapy</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#read-and-write-boolean">Read and write boolean</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -355,6 +359,30 @@ Received 2 packets, got 1 answers, remaining 0 packets
 <li>Dans le script "asyncmodbus.py" utilisé pour créer le serveur, la library <strong>pymodbus</strong> est utilisé.
 Voici la documentation : https://pymodbus.readthedocs.io/en/latest/index.html</li>
 </ul>
+<h3 id="read-and-write-boolean">Read and write boolean</h3>
+<pre><code>from pymodbus.client.sync import ModbusTcpClient
+
+client = ModbusTcpClient('192.168.43.161')
+client.write_coil(1, False)
+result = client.read_coils(1,1)
+print(result.bits[0])
+client.close()
+</code></pre>
+
+<pre><code>False
+</code></pre>
+
+<pre><code>from pymodbus.client.sync import ModbusTcpClient
+
+client = ModbusTcpClient('192.168.43.161')
+client.write_coil(1, True)
+result = client.read_coils(1,1)
+print(result.bits[0])
+client.close()
+</code></pre>
+
+<pre><code>True
+</code></pre>
               
             </div>
           </div>
