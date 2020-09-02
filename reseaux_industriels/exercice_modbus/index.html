@@ -214,6 +214,16 @@ Options:
 </code></pre>
 
 <p><strong>A l’aide de write, modifier un booléen parmi les 5 premiers booléens modifiables</strong></p>
+<pre><code>sudo modbus write 192.168.43.161 3 0
+</code></pre>
+
+<p><img alt="" src="../images/exercice/modbus_4.png" /></p>
+<pre><code>sudo modbus read 192.168.43.161 3 1
+</code></pre>
+
+<pre><code>3          0
+</code></pre>
+
 <h2 id="exercice-2-scan-avec-nmap">Exercice 2 - Scan avec Nmap</h2>
 <p><strong>Executer un nmap avec un script nse dédié à l’énumération pour modbus</strong></p>
 <pre><code>nmap --script-help &quot;*modbus*&quot;
@@ -237,17 +247,21 @@ https://nmap.org/nsedoc/scripts/modbus-discover.html
   * Modscan utility is hosted at google code: http://code.google.com/p/modscan/
 </code></pre>
 
-<pre><code>nmap -sT -p502 --script modbus-discover 192.168.43.161
+<pre><code>nmap -p502 --script modbus-discover.nse 192.168.43.161
 </code></pre>
 
-<pre><code>Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-01 14:48 CEST
+<pre><code>Starting Nmap 7.80 ( https://nmap.org ) at 2020-09-02 09:21 CEST
 Nmap scan report for 192.168.43.161
-Host is up (0.00087s latency).
+Host is up (0.0018s latency).
 
-PORT    STATE    SERVICE
-502/tcp filtered mbap
+PORT    STATE SERVICE
+502/tcp open  modbus
+| modbus-discover: 
+|   sid 0x1: 
+|     Slave ID data: PyModbus Inc.-PM-1.0\xFF
+|_    Device identification: PyModbus Inc. PM 1.0
 
-Nmap done: 1 IP address (1 host up) scanned in 0.50 seconds
+Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
 </code></pre>
 
 <h2 id="exercice-3">Exercice 3</h2>
