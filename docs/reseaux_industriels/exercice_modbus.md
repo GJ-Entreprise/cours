@@ -272,9 +272,35 @@ __Rechercher un framework (lmot clé smod?) pour scapy permettant de crafter des
 * Dans le script "asyncmodbus.py" utilisé pour créer le serveur, la library __pymodbus__ est utilisé.
 Voici la documentation : https://pymodbus.readthedocs.io/en/latest/index.html
 
+### Read and write boolean
 
+```
+from pymodbus.client.sync import ModbusTcpClient
 
+client = ModbusTcpClient('192.168.43.161')
+client.write_coil(1, False)
+result = client.read_coils(1,1)
+print(result.bits[0])
+client.close()
+```
 
+```
+False
+```
+
+```
+from pymodbus.client.sync import ModbusTcpClient
+
+client = ModbusTcpClient('192.168.43.161')
+client.write_coil(1, True)
+result = client.read_coils(1,1)
+print(result.bits[0])
+client.close()
+```
+
+```
+True
+```
 
 
 
