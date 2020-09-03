@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Instruction memoire entreprise - Cours - GJ enterprise</title>
+  <title>Forensic - Cours - GJ enterprise</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Instruction memoire entreprise";
-    var mkdocs_page_input_path = "memoire_entreprise/instruction_memoire_entreprise.md";
+    var mkdocs_page_name = "Forensic";
+    var mkdocs_page_input_path = "forensic/cours_forensic.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -52,8 +52,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Forensic</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../forensic/cours_forensic/">Forensic</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Forensic</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#forensic-physique">Forensic physique</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#forensic-numerique-informatique-legale">Forensic numérique (informatique légale)</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Management</span></p>
@@ -66,10 +72,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Memoire entreprise</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Instruction memoire entreprise</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../memoire_entreprise/instruction_memoire_entreprise/">Instruction memoire entreprise</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Reseaux industriels</span></p>
@@ -100,11 +104,11 @@
     
       
         
-          <li>Memoire entreprise &raquo;</li>
+          <li>Forensic &raquo;</li>
         
       
     
-    <li>Instruction memoire entreprise</li>
+    <li>Forensic</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -115,37 +119,59 @@
           <div role="main">
             <div class="section">
               
-                <p><strong> /!\ ALL IN ENGLISH  /!\ </strong></p>
-<h1 id="presenter-lentreprise-et-les-differents-serivces">Présenter l'entreprise et les différents serivces</h1>
+                <h1 id="forensic">Forensic</h1>
 <ul>
-<li>Votre rôle dans le service (sans rentrer dans les détails mais liste exaustive des missions)</li>
-<li>présenter le chiffre d'affaire, les budgets</li>
-<li>qui sont les clients ? Comment l'entreprise gagne des sous</li>
-<li>qui est dans le service, les managers, la hierarchie</li>
+<li>Enquete scientifique</li>
+<li>La preuve de doit pas être altérée</li>
+<li>Préserver l'information</li>
 </ul>
-<h1 id="remercier">Remercier</h1>
+<h2 id="forensic-physique">Forensic physique</h2>
 <ul>
-<li>entreprise</li>
-<li>MA</li>
-<li>manager et differents membres de l'équipe, CFA, ITECIA</li>
+<li>ADN</li>
+<li>Empreintes digitales</li>
+<li>Sang</li>
+<li>etc</li>
 </ul>
-<h1 id="lister-toues-vos-actionsmisisonstaches-quotidiennes">Lister toues vos actions/misisons/tâches quotidiennes</h1>
-<p>=&gt; choisir les missions à développer (Environ 3 situations) (si pleins de petites choses, peut en faire plus)
-* entretient annuel
-* indicateur de qualité (si existant)</p>
-<h2 id="situation">Situation</h2>
+<h2 id="forensic-numerique-informatique-legale">Forensic numérique (informatique légale)</h2>
 <ul>
-<li>date début/fin</li>
-<li>objectif / problèmes régler</li>
-<li>Impact</li>
-<li>Définir le cadre (tensions, problèmes internes à l'équipe, humain)</li>
+<li>Periphérique de stockage</li>
+<li>Traces réseaux</li>
+<li>Traces mémoire vive</li>
 </ul>
-<h1 id="avis-critique-sur-levolution-forces-et-faiblesses">Avis critique sur l'évolution, forces et faiblesses</h1>
+<p>La gendarmerie met un ordi sous cellé (toujours à deux), le cache, signature.</p>
+<h1 id="conservation-de-la-preuve">Conservation de la preuve</h1>
 <ul>
-<li>methode SWAT (strengh / weakness/ ....)</li>
-<li>Montrer une évolution</li>
+<li>La preuve ne doit jamais être altérée, même de façon infime.</li>
 </ul>
-<p>Montrer que l'on est prêt à être cadre débutant</p>
+<h1 id="tracabilite">Traçabilité</h1>
+<ul>
+<li>Obligatoire de tracer qui a fait quoi, quand. <strong>(chain of custody</strong>)</li>
+</ul>
+<h1 id="phases-de-linfo-legale">Phases de l'info légale</h1>
+<p>1) Conservation de la peuvre =&gt; aucun dommage / atltération effectué sur la preuve
+2) Recherche de preuve(s)
+3) Reconstruction des evenements
+    - reconstruire les evenements sur un plan chronologique suite aux preuves trouvés =&gt;  2)</p>
+<h1 id="attaque-info-incidentreponse">Attaque info (incident/réponse)</h1>
+<p>1) Valider s'il sagit d'un incident (recherches préliminaires).
+    - un serveur qui perd des fichiers =&gt; peut-être un simple bug windows ou une attaque
+2) Si c'est un incident
+    - Préservation des données et traçabilité
+    - Recherche de preuve
+    - Remise en ordre des evênements
+3) Rapport complet</p>
+<p><img alt="" src="../images/schema_investigation.png" /></p>
+<h1 id="erreurs-a-ne-pas-faire">Erreurs à ne pas faire</h1>
+<ul>
+<li>Redémarer la machine</li>
+<li>Allumer la machine</li>
+<li>Extraire le disque dur et le brancher en externe (antivirus va scan, windows monte en lecture/écriture), monter le disque en lecture/écriture</li>
+<li>Ne pas investiguer tout de suite ! On ne travail jamais sur la preuve, on la copie puis on taff dessus.</li>
+</ul>
+<h1 id="les-bonnes-pratiques">Les bonnes pratiques</h1>
+<ul>
+<li>Pour investiguer un disque dur il faut un HDD locker, c'est un chariot externe avec un système qui empêche l'écriture sur le disque (electroniquement)</li>
+</ul>
               
             </div>
           </div>
@@ -153,10 +179,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../reseaux_industriels/exercice_modbus/" class="btn btn-neutral float-right" title="Exercices modbus">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../management/STMicroelectronics/" class="btn btn-neutral float-right" title="STMicroelectronics">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../management/proteger_le_travail/" class="btn btn-neutral" title="Proteger le travail"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Welcome to courses website"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -182,10 +208,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../management/proteger_le_travail/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../reseaux_industriels/exercice_modbus/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../management/STMicroelectronics/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
