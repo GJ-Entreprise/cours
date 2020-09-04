@@ -4,9 +4,9 @@
 
 Voici une usine à Thé, tous les composants sont contrôlés par un controleur 
 
-![](../images/usine_the.png)
+![](images/usine_the.png)
 
-![](../images/usine_the_2.png)
+![](images/usine_the_2.png)
 
 * Le PLC (boitier de commande), gère les capteurs (actionneurs) et les moteurs.
 
@@ -24,7 +24,7 @@ __Machine outil (pilotage)(machine autonome)__
 * Bus actionneur : interbus
 * Bus de terrain (device bus): Modbus, interbus-S, profibus, device net
 
-<img src="../images/asi.jpg" width="200"/> <img src="../images/seriplex.gif" width="200"/> <img src="../images/interbus.png" width="200"/> <img src="../images/profibus.png" width="200"/>  <img src="../images/modbus.png" width="200"/>  <img src="../images/devicenet.jpg" width="200"/> 
+<img src="images/asi.jpg" width="200"/> <img src="images/seriplex.gif" width="200"/> <img src="images/interbus.png" width="200"/> <img src="images/profibus.png" width="200"/>  <img src="images/modbus.png" width="200"/>  <img src="images/devicenet.jpg" width="200"/> 
 
 __Machine__ (pilotage et/ou process) => machine discute avec PLC ou SCADA
 
@@ -59,7 +59,7 @@ Ex : Le bouton d'arrêt d'urgence ne peut être gérer par ethernet (best effort
 * Contraintes environnementales : corrosivité, explosivité, etc
 
 * Token ring : Chacun a la parole pendant un temps, si un tombe en panne tout se casse la gueulle. Débit faible.
-![](../images/token_ring.png)
+![](images/token_ring.png)
 
 ## Presentation des Bus
 ### Modbus
@@ -72,13 +72,13 @@ Ex : Le bouton d'arrêt d'urgence ne peut être gérer par ethernet (best effort
 * Basé sur un modèle requête / réponse
 * structuré en PDU (Protocol Data Unit) identique en serie ou ethernet. et en ADU (Application Data Unit)
 
-![](../images/modbus_PDU.png)
+![](images/modbus_PDU.png)
 
-![](../images/modbus_ADU_serie.png)
+![](images/modbus_ADU_serie.png)
 
 __Adresse escalve null => Broadcast__
 
-![](../images/modbus_ADU_ethernet.png)
+![](images/modbus_ADU_ethernet.png)
 
 __MBAP__ : 
 - Transaction ID : (2 octets, encodé en ASCII), défini par le client (esclave), réutilisé par le serveur pour parler au client.
@@ -86,19 +86,35 @@ __MBAP__ :
 - Length : (2 octets), longueur du message qui va suivre (octets)
 - Unit ID : (2 octets), numéro (adresse) de l'esclave
 
-![](../images/modbus_ADU_ethernet_2.png)
+![](images/modbus_ADU_ethernet_2.png)
 
 
 ## Graphset
 
-![](../images/infrastructure.png)
+![](images/infrastructure.png)
 
-![](../images/grafcet.png)
+![](images/grafcet.png)
 
 ### exemple
 
-![](../images/ex_grafcet.png)
+![](images/ex_grafcet.png)
 
 __Transition__ : on passe d'une étape à la suivante en franchissant une transition. Une transition est présente quand c'est une nécessité.
 
 __Etape__ : Toujours un verbe à l'infinitif
+
+
+#### OU
+
+![](images/grafcet_OU.png)
+
+#### ET
+
+![](images/grafcet_ET.png)
+
+
+
+
+
+
+
