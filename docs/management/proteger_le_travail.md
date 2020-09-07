@@ -67,3 +67,52 @@ __Que faire en cas de non respect du droit d'auteur ?__
 * Situation dans laqeuelle l'auteur (éditeur) d'un logiciel découvre une utilisation non autorisée de son logiciel => Dans ce cas il doit saisir les tribunaux afin de faire cesser l'utilisation non autorisée (logiciels craqué) => demande d'astreinte.
 
 * Vous créer un logiciel, une personne récupère de manière froduleuse le code source et utilise le logiciel en son nom. => action en contrefaçon, il faudra démontrer êtr le premier à l'avoir créé. (mail, code etc).
+
+
+__Exemple de contrat de developpement spécifique de logiciel__
+
+
+1) identification des partis
+    - prestataire : adresse, nom de l'entreprise, représentant légal, numéro RCS, nom du signataire.
+
+1ere question : si exclusivité du logiciel, client spécifique ou client + filliales
+
+
+
+3) __Le prix ?__
+
+PLusieurs paramètres rentrent en ligne de compte dans le calcul du prix :
+* le scode of work => le prix doit être conforme à ce qui est "réellement vendu"
+* L'exclusivité ou non sur le logiciel => prix plus élevé si exclusivité
+* les prestataires anexes (formation, mise à jour, etc)
+
+Sur la prestation intelectuelle, ce qui compte tarif (homme/jour) + prix équipement
+
+### forfaitaire
+* Forfait 150000€ HT developpement + installation ERP sécurisé
+Si dépense 180000€, c'est 30000€ de perte.
+Si dépense 90000€, gain 60000€
+
+### Régie
+On communique au client les prix : 
+- technicien : 400€
+- ingé : 650€
+- chef projet : 800€
+
++ budget équipement 20% => Budget estimatif.
+
+L'enterprise revient régulièrement vers le clients avec l'évolution du prix.
+
+
+L'avantage pour le client du prix en régie c'est qu'il est sûr de payer exactement ce que ça coûte. Ne paiera pas plus que ce que ça vaut.
+
+__Les modalités de paiements__
+
+C'est libre
+
+Exemple : 
+30% à la signature
+40% recette provisoir
+30% recette finale
+
+L'objectif étant d'être en trésorerie positive.

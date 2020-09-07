@@ -48,7 +48,7 @@ sudo modbus 192.168.43.161 1 5
 5          1
 ```
 
-![](../images/exercice/modbus_1.png)
+![](images/modbus_1.png)
 
 __A l’aide de la commande modbus read, isez les 5 premiers registres entiers__
 
@@ -63,7 +63,7 @@ sudo modbus read 192.168.43.161 400001 5
 400005         17
 ```
 
-![](../images/exercice/modbus_2.png)
+![](images/modbus_2.png)
 
 __A l’aide de write, modifier un entier parmi les 5 premiers entiers__
 
@@ -99,7 +99,7 @@ Options:
 sudo modbus write -i 192.168.43.161 400002 6
 ```
 
-![](../images/exercice/modbus_3.png)
+![](images/modbus_3.png)
 
 ```
 sudo modbus read -i 192.168.43.161 400002 1
@@ -115,7 +115,7 @@ __A l’aide de write, modifier un booléen parmi les 5 premiers booléens modif
 sudo modbus write 192.168.43.161 3 0
 ```
 
-![](../images/exercice/modbus_4.png)
+![](images/modbus_4.png)
 
 ```
 sudo modbus read 192.168.43.161 3 1
@@ -171,15 +171,15 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.30 seconds
 ```
 
-![](../images/exercice/modbus_5.png)
+![](images/modbus_5.png)
 
-![](../images/exercice/modbus_6.png)
+![](images/modbus_6.png)
 
 ## Exercice 3 - Recherche d'exploit
 
 __Trouver au moins un exploit existant dans exploit-db.com concernant un serveur modbus__
 
-![](../images/exercice/modbus_7.png)
+![](images/modbus_7.png)
 
 ## Exercice 4 - Avec Scapy
 
