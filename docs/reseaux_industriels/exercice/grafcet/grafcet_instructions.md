@@ -8,4 +8,6 @@
 
 Un imeuble avec en 4 etages. Chaque étage à sa sonde de température.
 
+__macro pour un étage__
+
 ![](images/grafcet_soufflerie.png)
