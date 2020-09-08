@@ -156,3 +156,5 @@ Le montant des travaux supplémentaires (T.S) sera calculé sur la base suivante
 - connexion
 - arrêt de production
 => Le délai de commence à courrir que lorsque toutes les conditions sont remplies.
+
+Tout retard imputable au client et/ou aux autres entreprises interantes sur site donne droit à une extension de délai (équivalente) au retard + un délai raisonnable nécessaire pour la réflexion du personnel du prestataire.
