@@ -116,3 +116,43 @@ Exemple :
 30% recette finale
 
 L'objectif étant d'être en trésorerie positive.
+
+
+4) __Modalités de facturation__
+
+L'interêt est de facturer et d'être payé rapidement. L'idéal est d'être payé par le client avant de payer le fournisseur.
+
+* Vente d'un serveur : (10000€ prix client => 30 jours / 7000€ prix fournisseur => 60 jours) => T.P = 3000€
+
+2eme perte : les stocks ont un coût, limiter au maximum les stocks. => close de réserve de propriété. A default de paiement de l'intégralité du prix, les équipements seront retirés au vendeur à la charge du client.
+
+
+Un objet loué ne pourra pas être saisi, n'appartient pas à la personne mais à l'entreprise qui loue.
+
+
+__clause__
+" Les partis sont convenues que le transfert de propriété des "biens" vendus est diféré jusqu'au complet paiement de la somme correspondant au dit équipement".
+- 1er avantage : En cas de non paiement, les équipements peuvent être récupérés.
+- 2eme avantage : En cas de liquideation judiciaire du client, les biens non payés appartiennent encore au vendeur.
+
+
+5) __Travaux additionnels__
+
+Cette close prévoit que le client peut demander des T.S, en tous les cas cela doit faire l'objet d'un avenant au contrat.
+- Article 2 Définition des prestataires : les prestations sont modifiés telles que décrites dans la V2 du cahier des charges.
+- Article 3 : Le prix est modifié comme suit
+- Article X : Le délai de livraison est étendu de X jours
+
+Le montant des travaux supplémentaires (T.S) sera calculé sur la base suivante : 
+=> 500€/jour/technicien
+=> 750€/jour/ingé
+=> prix des équipements +20%
+
+6) __Délais d'execution__
+
+* Toujours le calculer en semaine ou mois mais pas de date de fin, et prévoir les conditions de début des prestations (pré-requis client).
+- electricité
+- accès
+- connexion
+- arrêt de production
+=> Le délai de commence à courrir que lorsque toutes les conditions sont remplies.
