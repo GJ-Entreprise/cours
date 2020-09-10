@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Collect email - Cours - GJ enterprise</title>
+  <title>Cours - Cours - GJ enterprise</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Collect email";
-    var mkdocs_page_input_path = "methodologie_pentest/cyberwings.md";
+    var mkdocs_page_name = "Cours";
+    var mkdocs_page_input_path = "securit\u00e9_IOT/cours.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -71,18 +71,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Methodologie pentest</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Collect email</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#tous-les-navigateurs">Tous les navigateurs</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../methodologie_pentest/cyberwings/">Collect email</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../methodologie_pentest/">Méthodologie de pentest</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../methodologie_pentest/methodologie_pentest/">Méthodologie de pentest</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Exercices</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../exercices/sectools.org/">Sectools.org</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../methodologie_pentest/exercices/sectools.org/">Sectools.org</a>
                 </li>
     </ul>
                     </li>
@@ -111,8 +107,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">securité IOT</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../securit%C3%A9_IOT/cours/">Cours</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cours</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#definition">Definition</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#facturation">Facturation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raison-pour-llaer-dans-le-cloud">Raison pour llaer dans le cloud ?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#economique">Economique</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#securite">Securité</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -136,11 +146,11 @@
     
       
         
-          <li>Methodologie pentest &raquo;</li>
+          <li>securité IOT &raquo;</li>
         
       
     
-    <li>Collect email</li>
+    <li>Cours</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -151,56 +161,48 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="collect-email">Collect email</h1>
-<pre><code>theharvester -d cyberwings.fr -b google
-</code></pre>
-
-<p>=&gt; found 3 mail address</p>
-<h2 id="tous-les-navigateurs">Tous les navigateurs</h2>
-<p><strong>Need to configure API key</strong></p>
-<pre><code>theharvester -d cyberwings.fr -b all
-</code></pre>
-
-<h1 id="recherches-google">recherches google</h1>
+                <h2 id="cloud-computing">Cloud computing</h2>
+<h3 id="definition">Definition</h3>
+<p><strong>Définition du NIST :</strong></p>
 <ul>
-<li>emplois</li>
-<li>cyberwings IRC</li>
-<li>cyberwings torrent
-=&gt; CV</li>
+<li>Modèle omniprésent</li>
+<li>Adapté aux besoins</li>
+<li>Disponible à la demande</li>
+<li>Utilise des réseaux<ul>
+<li>Accéder à des moyens informatiques, partagés, configurable</li>
 </ul>
-<h1 id="dns">DNS</h1>
-<pre><code>whois cyberwings.fr
-</code></pre>
-
-<pre><code>dnsenum cyberwings.fr
-</code></pre>
-
-<h2 id="wordlist">Wordlist</h2>
-<pre><code>dnsenum google.com -f /usr/share/dirb/wordlist/small.txt
-</code></pre>
-
-<h2 id="dns-bloque">DNS bloqué ?</h2>
-<pre><code>dnsbl.info
-</code></pre>
-
-<h2 id="checker-mail-serveur">Checker mail serveur</h2>
-<pre><code>nc -vv mx2.ovh.net 25
-VRFY t220 mx2.ovh.net in41
-</code></pre>
-
-<pre><code>502 5.5.1 VRFY command is disabled
-</code></pre>
-
-<h2 id="transfert-de-zone-dns">transfert de zone DNS</h2>
-<pre><code>digdig axfr @213.251.188.133 cyberwings.fr
-</code></pre>
-
-<pre><code>Failed
-</code></pre>
-
-<h2 id="aspirer-le-site">Aspirer le site</h2>
-<pre><code>httrack cyberwings.fr
-</code></pre>
+</li>
+<li>Les moyens informatique peuvent être réservés et libérés en fonction des besoins<ul>
+<li><strong>AVEC</strong> un effort minimal de configuration</li>
+</ul>
+</li>
+</ul>
+<h3 id="facturation">Facturation</h3>
+<p><strong>Télémétrie</strong>, le prix est calculé sur beaucoup d'aspect : </p>
+<ul>
+<li>Utilisation CPU</li>
+<li>Stockage</li>
+<li>etc</li>
+</ul>
+<h3 id="raison-pour-llaer-dans-le-cloud">Raison pour llaer dans le cloud ?</h3>
+<h4 id="economique">Economique</h4>
+<p>Pour toutes les entreprises, le service info est un centre de coût, pas de profit. 
+Mais le cloud est piegeux, les coûts grimpent vite ! Mais alors au top niveau infra</p>
+<h4 id="securite">Securité</h4>
+<p>Les informaticiens ne sont pas toujours amis avec la sécurité, maîtrise pas toujours le concept, les outils, etc...
+Entre attaquer une infra d'un PME ou AWS/OVH/etc c'est pas pareil.</p>
+<p>1) Recencer tous les processus de l'entreprise =&gt; BPL (graph simple et comprehensible par lambda)</p>
+<p>2) Recencer tous les biens (assessments, les choses achetées)(materiel / immateriel)</p>
+<p>3) Recencer tous les besoins (de quoi l'entreprise a besoin)</p>
+<p>a) échanger avec les cadres (ton service utilise quoi ? les besoins ?)</p>
+<p>b) échanger avec les salariés (pas la même vision que les cadres)</p>
+<p>c) échanger avec les clients (temps de paiements, comment ça se passe avec l'entreprise ?)</p>
+<p>d) Volumétrie moyenne du réseau =&gt; séparer les flux</p>
+<p>e) Inventaire logiciel / materiel</p>
+<p>f) Inventaire des données compatbles</p>
+<p>g) Inventaire des assurances (voir si les contrats sont toujours valides avec le cloud)</p>
+<p>h) Les données personnelles (RGPD) c'est le cadre qui encadre le service qu'il gère qui gère les données personnelles des employés.</p>
+<p>i) Analyser l'impact juridique.</p>
               
             </div>
           </div>
@@ -208,10 +210,8 @@ VRFY t220 mx2.ovh.net in41
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../methodologie_pentest/" class="btn btn-neutral float-right" title="Méthodologie de pentest">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../../memoire_entreprise/instruction_memoire_entreprise/" class="btn btn-neutral" title="Instruction memoire entreprise"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../reseaux_industriels/exercice/modbus/exercice_modbus/" class="btn btn-neutral" title="Exercices modbus"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -237,10 +237,8 @@ VRFY t220 mx2.ovh.net in41
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../memoire_entreprise/instruction_memoire_entreprise/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../reseaux_industriels/exercice/modbus/exercice_modbus/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../methodologie_pentest/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
