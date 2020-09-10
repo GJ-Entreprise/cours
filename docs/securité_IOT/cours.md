@@ -55,7 +55,9 @@ i) Analyser l'impact juridique.
 __Business Impact Analysis__ : Etude de l'impact sur la productivité de l'entreprise si un processus métier ou un équipement/bien sur lequel repose le processus venait à faillir.
 
 => Etablir les chemins critiques : les processus que l'on ne pourra pas interrompre.
+
 => Evaluer l'impact économique en cas de rupture du process. (la hotline on s'en fou peut etre pas mal)
+
 => Coût de mise en conformité
 
 #### Coût
@@ -70,14 +72,17 @@ Modèle économique :
 
 - SaaS : Sofware as a Service : emails, CRM, soft tout prêt clé en main.
 - IaaS : Infrastructure as a Service : serveur baremetal
+    + POSITIFS : 
     + Garde la main sur la sécurité.
     + Très utilisé pour la sauvegarde de donnée.
     + PRA / PCA (plan de secours, plan de restauration).
     + Très forte disponibilité.
 
+    - NEGATIFS : 
     - administration
     - mises à jour
     - gain cloud minime
+    
 - PaaS : Platform as a Service : système exploitation tout prêt (instance)
     IaaS + install les mises à jour des OS
     + devops
