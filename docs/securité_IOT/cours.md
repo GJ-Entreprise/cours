@@ -73,19 +73,21 @@ Modèle économique :
 - SaaS : Sofware as a Service : emails, CRM, soft tout prêt clé en main.
 - IaaS : Infrastructure as a Service : serveur baremetal
     + POSITIFS : 
-    + Garde la main sur la sécurité.
-    + Très utilisé pour la sauvegarde de donnée.
-    + PRA / PCA (plan de secours, plan de restauration).
-    + Très forte disponibilité.
+        + Garde la main sur la sécurité.
+        + Très utilisé pour la sauvegarde de donnée.
+        + PRA / PCA (plan de secours, plan de restauration).
+        + Très forte disponibilité.
 
     - NEGATIFS : 
-    - administration
-    - mises à jour
-    - gain cloud minime
-    
+        - administration
+        - mises à jour
+        - gain cloud minime
+
 - PaaS : Platform as a Service : système exploitation tout prêt (instance)
     IaaS + install les mises à jour des OS
-    + devops
-    - manque de visibilité sur l'hardening
-    - difficulté à modifier paramètre bloqués
+    + POSITIFS :
+        + devops
+    - NEGATIFS :
+        - manque de visibilité sur l'hardening
+        - difficulté à modifier paramètre bloqués
 
