@@ -14,12 +14,11 @@ startnetcat() {
     $port=1235
     while true
     do
-        nc -k -l localhost 1234 | while read line
+        nc -k -l localhost $port | while read $filename
         do
             echo $line >> ./$number/$filename
         done
-        filename=$(nc -l $port)
-        echo $filename
+        $port=$port+1
     done
 }
 
