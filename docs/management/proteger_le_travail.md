@@ -158,3 +158,37 @@ Le montant des travaux supplémentaires (T.S) sera calculé sur la base suivante
 => Le délai de commence à courrir que lorsque toutes les conditions sont remplies.
 
 Tout retard imputable au client et/ou aux autres entreprises interantes sur site donne droit à une extension de délai (équivalente) au retard + un délai raisonnable nécessaire pour la réflexion du personnel du prestataire.
+
+"Tout retard imputable au prestataire donnera droit au client à un paiement de 1% du montant du contrat par semaine de retard"
+
+- Je dois développer un logiciel qui fait fonctionner une ligne de prod (1M€/jour). =>Je vends mon logiciel : 100.000€
+    5 mois => livraison 6 mois : 4000€ pénalité de retard
+
+En droit des contrats : Les pénalités de retard (liquidated et domages) sont forfaitaire et libératoire, ce qui signifie que le client ne peut pas demander plus de dédommagement au titre des retards. En cas de retard le prestataire n'a rien à payer en plus que le montant des pénalités.
+
+7) __Collaboration du client__  => le prestataire peut lister des prérequis
+
+Le client est tenu de collaborer avec le prestataire : 
+- Lui fournir l'ensemble des informations nécessaires à la bonne réalisation du projet.
+- Lui indiquer des éventuelles difficultés liés à la réalisation des prestataires.
+- Valider le cahier des charges.
+- Participer aux réunions, etc
+
+8) __Tests__
+Important : Tester le fonctionnement de ce que vous faites => la recette (le recetage)
+Qui établit les tests : les clients ? le prestataire ? => le calendrier + les tests à proprement parlé.
+
+L'idéal étant de tester régulièrement les évaluations du développement du logiciel.
+
+9) __la recette__
+
+Prévoir un délai maximum de réponse du client en précisant que passé ce délai la recette est sensée avoir été faite.
+
+" A defaut de réponse du client sous 8 jours à la demande de recette du prestataire, la recette est réputée avoir été réalisée."
+
+__La garantie__
+
+- A dater de la recette, le prestataire s'engage à corriger les anomalies éventuelles pendant une période de X mois (à négocier).
+
+- Plafonner à un coût, droit à X€ de réparations.
+
