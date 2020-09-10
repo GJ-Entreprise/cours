@@ -120,6 +120,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#securite">Securité</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#migrer-dans-le-cloud">Migrer dans le cloud</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bia">BIA</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cout">Coût</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -191,18 +197,55 @@ Mais le cloud est piegeux, les coûts grimpent vite ! Mais alors au top niveau i
 <h4 id="securite">Securité</h4>
 <p>Les informaticiens ne sont pas toujours amis avec la sécurité, maîtrise pas toujours le concept, les outils, etc...
 Entre attaquer une infra d'un PME ou AWS/OVH/etc c'est pas pareil.</p>
+<h4 id="migrer-dans-le-cloud">Migrer dans le cloud</h4>
 <p>1) Recencer tous les processus de l'entreprise =&gt; BPL (graph simple et comprehensible par lambda)</p>
 <p>2) Recencer tous les biens (assessments, les choses achetées)(materiel / immateriel)</p>
 <p>3) Recencer tous les besoins (de quoi l'entreprise a besoin)</p>
-<p>a) échanger avec les cadres (ton service utilise quoi ? les besoins ?)</p>
-<p>b) échanger avec les salariés (pas la même vision que les cadres)</p>
-<p>c) échanger avec les clients (temps de paiements, comment ça se passe avec l'entreprise ?)</p>
-<p>d) Volumétrie moyenne du réseau =&gt; séparer les flux</p>
-<p>e) Inventaire logiciel / materiel</p>
-<p>f) Inventaire des données compatbles</p>
-<p>g) Inventaire des assurances (voir si les contrats sont toujours valides avec le cloud)</p>
-<p>h) Les données personnelles (RGPD) c'est le cadre qui encadre le service qu'il gère qui gère les données personnelles des employés.</p>
-<p>i) Analyser l'impact juridique.</p>
+<p>a) échanger avec les cadres (ton service utilise quoi ? les besoins ?)
+b) échanger avec les salariés (pas la même vision que les cadres)
+c) échanger avec les clients (temps de paiements, comment ça se passe avec l'entreprise ?)
+d) Volumétrie moyenne du réseau =&gt; séparer les flux
+e) Inventaire logiciel / materiel
+f) Inventaire des données compatbles
+g) Inventaire des assurances (voir si les contrats sont toujours valides avec le cloud)
+h) Les données personnelles (RGPD) c'est le cadre qui encadre le service qu'il gère qui gère les données personnelles des employés.
+i) Analyser l'impact juridique.</p>
+<h4 id="bia">BIA</h4>
+<p><strong>Business Impact Analysis</strong> : Etude de l'impact sur la productivité de l'entreprise si un processus métier ou un équipement/bien sur lequel repose le processus venait à faillir.</p>
+<p>=&gt; Etablir les chemins critiques : les processus que l'on ne pourra pas interrompre.
+=&gt; Evaluer l'impact économique en cas de rupture du process. (la hotline on s'en fou peut etre pas mal)
+=&gt; Coût de mise en conformité</p>
+<h4 id="cout">Coût</h4>
+<ul>
+<li>Réduction de la masse salariale.</li>
+<li>Réduction coût opérations.</li>
+<li>Réduction des coûts de mise en conformité.</li>
+</ul>
+<p>Modèle économique : </p>
+<ul>
+<li>SaaS : Sofware as a Service : emails, CRM, soft tout prêt clé en main.</li>
+<li>
+<p>IaaS : Infrastructure as a Service : serveur baremetal</p>
+<ul>
+<li>Garde la main sur la sécurité.</li>
+<li>Très utilisé pour la sauvegarde de donnée.</li>
+<li>PRA / PCA (plan de secours, plan de restauration).</li>
+<li>
+<p>Très forte disponibilité.</p>
+</li>
+<li>
+<p>administration</p>
+</li>
+<li>mises à jour</li>
+<li>gain cloud minime</li>
+<li>PaaS : Platform as a Service : système exploitation tout prêt (instance)
+IaaS + install les mises à jour des OS</li>
+<li>devops</li>
+<li>manque de visibilité sur l'hardening</li>
+<li>difficulté à modifier paramètre bloqués</li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>
