@@ -68,7 +68,7 @@ __Business Impact Analysis__ : Etude de l'impact sur la productivité de l'entre
 
 
 
-Modèle économique : 
+#### Modèle économique : 
 
 - SaaS : Sofware as a Service : emails, CRM, soft tout prêt clé en main.
 - IaaS : Infrastructure as a Service : serveur baremetal
@@ -90,4 +90,88 @@ Modèle économique :
     - NEGATIFS :
         - manque de visibilité sur l'hardening
         - difficulté à modifier paramètre bloqués
+
+
+#### Mode de déployement : 
+
+- Cloud partagé : équipement possédés par le fournisseur
+    - Partagé entre tous les clients
+- Cloud privé : L'infrastructure d'une enteprise
+    - Réseau dédié
+    - Serivces accessible depuis l'exterieur de l'entreprise (VPN, DMZ, frontal, etc)
+    - Ne sert qu'à l'enterprise
+    - /!\ Pas forcement dans les locaux /!\
+- Cloud communautaire : Entreprise se regroupant pour former un cloud commun
+    - Souvent des associations
+    - owncloud / nextcloud
+- Modèle hybride : mix 2 type de cloud
+
+#### Type de datacenter
+
+T1 :
+- alimentation electrique secours pour serveur/sauvegarde => onduleurs
+- Coupure plus longue : générateur tenant jusqu'à 12h
+- Système spécifique de refroidissement des systèmes critique.
+- Espace dédié aux serveur
+- Espace dédié au réseau
+
+T2 : (T1 amélioré)
+- Redondance des serveurs et réseaux
+- Erreurs de manipulation : l'arrêt du service n'est pas systématique
+- En cas de maintenance planifiée : pas de coupure de service
+
+T3 : (T2 amélioré)
+- Tous les équipements électroniques ont un système d'alim électrique redondante.
+- Les opérations essentielles continuent en cas de panne d'un composant.
+
+T4 : la crême de la crême
+- __Tout__ est redondant (fil électrique, reseau, ordi, etc)
+La panne d'un système n'a pas de conséquence sur les services.
+Les évolutions techniques ne causent pas d'arrêt technique.
+
+#### Quelques outils Netflix pour foutre le bordel
+
+* Chaos Monkey
+* Doctor Monkey
+* Lattency Monkey
+=> Simian Army
+
+#### Les types de biens
+
+* Materiel
+* Immateriel
+* Processus
+* Chemin critique
+* Salariés
+
+#### Processus
+
+Dans tous service, peut y avoir des processsus critiques.
+SPOF => single Point Of Faillure, viendra principalement du matériel ou des employés
+
+### Frontière du cloud
+
+Dans un cloud public, les responsabilités sont réparties entre le client et le cloud. Il existe une zone grise dans laquelle on ne sait pas trop qui est responsable : 
+
+
+
+
+### Négociations
+
+* Négocier avec le fournisseur, comment etre sûr qu'un employé n'ira pas brancher un keylogger ? Exiger les mises à jour des CVEs critiques.
+* Chiffrement de disques durs.
+
+### DLP
+
+Data Lost Prevention, système de sauvegarde, prévention de la fuite de donnée. Va alerter si un utilisateur exfiltre des données (IA).
+Il y a une phase d'apprentissage, se base sur l'usage moyen d'un utilisateur sur un soft.
+
+#### Cycle de vie d'une donnée
+
+1) Création de la donnée (mémoire vive, HDD, variable)(elle peut ne pas être encore stockée)
+2) Utilisation de la donnée
+3) Stockage
+4) Partage
+5) Archivage (durée de vie, à un moment cette donnée devient moins utile voir plus du tout)
+6) Destruction
 
