@@ -126,6 +126,28 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#cout">Coût</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modele-economique">Modèle économique :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mode-de-deployement">Mode de déployement :</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#type-de-datacenter">Type de datacenter</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#quelques-outils-netflix-pour-foutre-le-bordel">Quelques outils Netflix pour foutre le bordel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-types-de-biens">Les types de biens</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#processus">Processus</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#frontiere-du-cloud">Frontière du cloud</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#negociations">Négociations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dlp">DLP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cycle-de-vie-dune-donnee">Cycle de vie d'une donnée</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -221,7 +243,7 @@ i) Analyser l'impact juridique.</p>
 <li>Réduction coût opérations.</li>
 <li>Réduction des coûts de mise en conformité.</li>
 </ul>
-<p>Modèle économique : </p>
+<h4 id="modele-economique">Modèle économique :</h4>
 <ul>
 <li>SaaS : Sofware as a Service : emails, CRM, soft tout prêt clé en main.</li>
 <li>
@@ -262,6 +284,79 @@ i) Analyser l'impact juridique.</p>
 </ul>
 </li>
 </ul>
+<h4 id="mode-de-deployement">Mode de déployement :</h4>
+<ul>
+<li>Cloud partagé : équipement possédés par le fournisseur<ul>
+<li>Partagé entre tous les clients</li>
+</ul>
+</li>
+<li>Cloud privé : L'infrastructure d'une enteprise<ul>
+<li>Réseau dédié</li>
+<li>Serivces accessible depuis l'exterieur de l'entreprise (VPN, DMZ, frontal, etc)</li>
+<li>Ne sert qu'à l'enterprise</li>
+<li>/!\ Pas forcement dans les locaux /!\</li>
+</ul>
+</li>
+<li>Cloud communautaire : Entreprise se regroupant pour former un cloud commun<ul>
+<li>Souvent des associations</li>
+<li>owncloud / nextcloud</li>
+</ul>
+</li>
+<li>Modèle hybride : mix 2 type de cloud</li>
+</ul>
+<h4 id="type-de-datacenter">Type de datacenter</h4>
+<p>T1 :
+- alimentation electrique secours pour serveur/sauvegarde =&gt; onduleurs
+- Coupure plus longue : générateur tenant jusqu'à 12h
+- Système spécifique de refroidissement des systèmes critique.
+- Espace dédié aux serveur
+- Espace dédié au réseau</p>
+<p>T2 : (T1 amélioré)
+- Redondance des serveurs et réseaux
+- Erreurs de manipulation : l'arrêt du service n'est pas systématique
+- En cas de maintenance planifiée : pas de coupure de service</p>
+<p>T3 : (T2 amélioré)
+- Tous les équipements électroniques ont un système d'alim électrique redondante.
+- Les opérations essentielles continuent en cas de panne d'un composant.</p>
+<p>T4 : la crême de la crême
+- <strong>Tout</strong> est redondant (fil électrique, reseau, ordi, etc)
+La panne d'un système n'a pas de conséquence sur les services.
+Les évolutions techniques ne causent pas d'arrêt technique.</p>
+<h4 id="quelques-outils-netflix-pour-foutre-le-bordel">Quelques outils Netflix pour foutre le bordel</h4>
+<ul>
+<li>Chaos Monkey</li>
+<li>Doctor Monkey</li>
+<li>Lattency Monkey
+=&gt; Simian Army</li>
+</ul>
+<h4 id="les-types-de-biens">Les types de biens</h4>
+<ul>
+<li>Materiel</li>
+<li>Immateriel</li>
+<li>Processus</li>
+<li>Chemin critique</li>
+<li>Salariés</li>
+</ul>
+<h4 id="processus">Processus</h4>
+<p>Dans tous service, peut y avoir des processsus critiques.
+SPOF =&gt; single Point Of Faillure, viendra principalement du matériel ou des employés</p>
+<h3 id="frontiere-du-cloud">Frontière du cloud</h3>
+<p>Dans un cloud public, les responsabilités sont réparties entre le client et le cloud. Il existe une zone grise dans laquelle on ne sait pas trop qui est responsable : </p>
+<h3 id="negociations">Négociations</h3>
+<ul>
+<li>Négocier avec le fournisseur, comment etre sûr qu'un employé n'ira pas brancher un keylogger ? Exiger les mises à jour des CVEs critiques.</li>
+<li>Chiffrement de disques durs.</li>
+</ul>
+<h3 id="dlp">DLP</h3>
+<p>Data Lost Prevention, système de sauvegarde, prévention de la fuite de donnée. Va alerter si un utilisateur exfiltre des données (IA).
+Il y a une phase d'apprentissage, se base sur l'usage moyen d'un utilisateur sur un soft.</p>
+<h4 id="cycle-de-vie-dune-donnee">Cycle de vie d'une donnée</h4>
+<p>1) Création de la donnée (mémoire vive, HDD, variable)(elle peut ne pas être encore stockée)
+2) Utilisation de la donnée
+3) Stockage
+4) Partage
+5) Archivage (durée de vie, à un moment cette donnée devient moins utile voir plus du tout)
+6) Destruction</p>
               
             </div>
           </div>
