@@ -169,9 +169,14 @@ Il y a une phase d'apprentissage, se base sur l'usage moyen d'un utilisateur sur
 #### Cycle de vie d'une donnée
 
 1) Création de la donnée (mémoire vive, HDD, variable)(elle peut ne pas être encore stockée)
+
 2) Utilisation de la donnée
+
 3) Stockage
+
 4) Partage
-5) Archivage (durée de vie, à un moment cette donnée devient moins utile voir plus du tout)
+
+5) Archivage (durée de vie, à un moment cette donnée devient moins utile voir plus du tout environ 5 ans)
+
 6) Destruction
 
