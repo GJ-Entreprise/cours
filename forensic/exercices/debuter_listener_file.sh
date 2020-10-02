@@ -10,16 +10,15 @@ scripthelp() {
 }
 
 startnetcat() {
-    echo $(date)": un listener a été ouvert pour le dossier $number" >> log.txt
-    $port=1235
-    while true
+    while read filename
     do
-        nc -k -l localhost $port | while read $filename
+        mkdir -p $number
+        nc -k -l localhost 1236 | while read line
         do
-            echo $line >> ./$number/$filename
+            echo $line >> $number/$(basename $filename) 2>&1
         done
-        $port=$port+1
-    done
+    done < <(nc -l localhost 1235)
+
 }
 
 $number
@@ -29,7 +28,7 @@ while getopts ':n:h' option; do
          exit
          ;;
       n) number=$OPTARG
-         [[ $number =~ '^[0-9]+$' ]] && scripthelp || folder
+         [[ $number =~ '^[0-9]+$' ]] && scripthelp
          startnetcat
          ;;
       *) scripthelp
