@@ -21,7 +21,7 @@ __Télémétrie__, le prix est calculé sur beaucoup d'aspect :
 - etc
 
 
-### Raison pour llaer dans le cloud ? 
+### Raison pour aller dans le cloud ? 
 
 #### Economique
 Pour toutes les entreprises, le service info est un centre de coût, pas de profit. 
