@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Comment traiter les données collectées ? - Cours - GJ enterprise</title>
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Comment traiter les donn\u00e9es collect\u00e9es ?";
+    var mkdocs_page_input_path = "management/donnes_personnelles.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Cours - GJ enterprise</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Welcome to courses website</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">cloud & IOT</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../cloud_&_IOT/cloud_computing/">Cloud computing</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Forensic</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../forensic/Evidence/">Evidence</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../forensic/autopsy/">Autopsy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../forensic/cours_forensic/">Forensic</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercices</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../forensic/exercices/dump_mem_disk/">Dump mémoire et disque dur</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Volatility</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../forensic/exercices/volatility/exercice2/">Forensic exercice 2 - Volatility</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Management</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../STMicroelectronics/">STMicroelectronics</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Comment traiter les données collectées ?</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#comment-traiter-les-donnees-collectees">Comment traiter les données collectées ?</a></li>
+    
+
+    <li class="toctree-l3"><a href="#comment-informer-les-personnes-concernees">Comment informer les personnes concernées ?</a></li>
+    
+
+    <li class="toctree-l3"><a href="#moyens-de-communication-aux-personnes-concernees">Moyens de communication aux personnes concernées :</a></li>
+    
+
+    <li class="toctree-l3"><a href="#comment-conserver-les-donnees">Comment conserver les données ?</a></li>
+    
+
+    <li class="toctree-l3"><a href="#mesure-de-securite">Mesure de sécurité</a></li>
+    
+
+    <li class="toctree-l3"><a href="#les-droits-des-personnes">Les droits des personnes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#le-dpo-data-protection-officer">Le DPO (Data Protection Officer)</a></li>
+    
+
+    <li class="toctree-l3"><a href="#les-obligations-du-responsable-du-traitement">Les obligations du responsable du traitement</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ses-obligations">Ses obligations</a></li>
+        
+            <li><a class="toctree-l4" href="#la-securite-des-dcp">La sécurité des DCP :</a></li>
+        
+            <li><a class="toctree-l4" href="#ses-obligations_1">Ses obligations</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#les-responsabilites-du-responsable-du-traitement">Les responsabilités du responsable du traitement</a></li>
+    
+
+    <li class="toctree-l3"><a href="#obligation-relative-aux-mots-de-passe">Obligation relative aux mots de passe</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#compromission-du-mot-de-passe">Compromission du mot de passe</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#les-zonnes-de-commentaire-libre">Les zonnes de commentaire libre</a></li>
+    
+
+    <li class="toctree-l3"><a href="#sanctions-administratives">sanctions administratives</a></li>
+    
+
+    <li class="toctree-l3"><a href="#sanctions-pecuniaires">sanctions pécuniaires</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../exploitation_base_de_donne/">L'exploitation de base de données</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../proteger_le_travail/">Proteger le travail</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Memoire entreprise</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../memoire_entreprise/instruction_memoire_entreprise/">Instruction memoire entreprise</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Methodologie pentest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../methodologie_pentest/cours/">Enumération passive</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../methodologie_pentest/cyberwings/">Collect email</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../methodologie_pentest/methodologie_pentest/">Méthodologie de pentest</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">ISSAF</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../methodologie_pentest/ISSAF/DE-ICE-110/">DE-ICE-110 - Pentest</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../methodologie_pentest/ISSAF/GoldenEye-V1/">GoldenEye V1</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../methodologie_pentest/ISSAF/template_ISSAF/">Méthodologie template - Pentest</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercices</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../methodologie_pentest/exercices/sectools.org/">Sectools.org</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reseaux industriels</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../reseaux_industriels/grafcet/">Graphset</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reseaux_industriels/reseaux_industriel/">Réseaux industriels</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercice</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Grafcet</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../reseaux_industriels/exercice/grafcet/grafcet_instructions/">Grafcet instructions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Modbus</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../reseaux_industriels/exercice/modbus/exercice_modbus/">Exercices modbus</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">securité IOT</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../securité_IOT/cours/">Cours</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Cours - GJ enterprise</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Management &raquo;</li>
+        
+      
+    
+    <li>Comment traiter les données collectées ?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="comment-traiter-les-donnees-collectees">Comment traiter les données collectées ?</h1>
+<ul>
+<li>Le consentant de la personne est le premier biais de collecte.</li>
+<li>
+<p>Execution d'un contrat (contrat de travail) 
+=&gt; logique et de proportionnalité
+=&gt; acceptation de conditions générales (monster, cadreemploi, donnée CV)(APEC)</p>
+</li>
+<li>
+<p>obligation légals : impôts, carte grise, points sur le permis.</p>
+</li>
+</ul>
+<p>Il existe 2 types de collecte : 
+* Direct : Dans ce cas l'information est commmuniqué au moment de la collecte. Par écrit, email ou par oral (téléphone).
+* Indirect (plus rare) : Dans ce cas (collecte massive de DCP) au moment du premier usage de DCP : reception massive de CV =&gt; l'information est faite au candidat quand le CV est transféré.</p>
+<h1 id="comment-informer-les-personnes-concernees">Comment informer les personnes concernées ?</h1>
+<ul>
+<li>En terms claires et simples</li>
+<li>Aisément accesible</li>
+<li>De manière concise</li>
+<li>En toute transparence</li>
+<li>Compréhensible par le publique visé</li>
+</ul>
+<h1 id="moyens-de-communication-aux-personnes-concernees">Moyens de communication aux personnes concernées :</h1>
+<ul>
+<li>Conditions générales d'utilisation (CGU)</li>
+<li>Intranet, afficahen email par les salariés</li>
+<li>Information sur site internet (type cookies) </li>
+</ul>
+<h1 id="comment-conserver-les-donnees">Comment conserver les données ?</h1>
+<ul>
+<li>Base active : conservation par la durée et la necessité du traitement</li>
+<li>Archives intermédiaires : conservation liée à une obligation légale ou dans le cadre d'un contentieux</li>
+<li>Archivage définitif : Conservation de certaines données qui représentent un intérêt statistique, historique ou scientifique. </li>
+</ul>
+<h1 id="mesure-de-securite">Mesure de sécurité</h1>
+<ul>
+<li>Base active : mesure de sécurité minimale corrrespondantes au type de traitement. Une fois la donnée utilisée, elle peut-être supprimée.</li>
+<li>Archives intermédiaures : mesure de sécurité particuliaire garantissant que seuls les services qui ont un besoin strict ont un accès.</li>
+<li>Archivage définitif : Les données dans ce cas doivent être anonymisées ou transmisent à  des organisme d'état ou sous tutelle de l'état (ARS, INSEE, CPAM))</li>
+</ul>
+<h1 id="les-droits-des-personnes">Les droits des personnes</h1>
+<ul>
+<li>information : c'est le point d'entrée du RGPD</li>
+<li>Accès : aux données personnelles qui nous concernent</li>
+</ul>
+<h1 id="le-dpo-data-protection-officer">Le DPO (Data Protection Officer)</h1>
+<ul>
+<li>missions : Informer et conseiller sur les obligations du responsable du traitement des données, des sous-traiteants, et des salariés qui peuvent être ammenés à traiter des données.</li>
+<li>
+<p>controler : la conformité au RGPD et aux règles internes de protection des données de l'ensemble des dispositifs et des process de l'entreprise</p>
+</li>
+<li>
+<p>Conseiller : La structure sur la mise en place des aspects liés aux données (DCP)
+=&gt; information des salariés
+=&gt; type de DCP recupérée
+=&gt; Durée de stockage, etc</p>
+</li>
+<li>
+<p>Pour qui ? 
+<strong>Obligatoire : </strong>
+Organisme, entreprise, administrations publiques
+entreprise qui procèdent aux traitement de DCP à caratère spécifiques : données de santes, activité physique, politique, religieuse, sexuelle, biométrique, condamnations, infractions, etc</p>
+</li>
+</ul>
+<p><strong>recommandé :</strong> entreprise traitant de nombreuses données / entreprise intervenant sur des marchés publiques</p>
+<h1 id="les-obligations-du-responsable-du-traitement">Les obligations du responsable du traitement</h1>
+<h2 id="ses-obligations">Ses obligations</h2>
+<ul>
+<li>Dans le registre : doivent eventuellement figurés les transferts de DCO vers les pays tiers au RGPD et/ou vers les organisations internationales</li>
+<li>délai d'effaceemnt des DCP</li>
+<li>descriptions des mesures techniques et orhanisationelles de protections des DCP ex: SIO 27001</li>
+</ul>
+<h2 id="la-securite-des-dcp">La sécurité des DCP :</h2>
+<ul>
+<li>analyse des risques, de la probabilité de réalisation du risque, des mesures à appropriées, des coûts liés à la protection des DCP, de la pertinance des mesures. Dans le but de proteger contre la perte, la destruction, l'altération, la divulgation non autorisé des DCP</li>
+</ul>
+<h2 id="ses-obligations_1">Ses obligations</h2>
+<p>Sur ces aspects sécurité le RGPD "recommande" de mettre en place : 
+* pseudonomisation et chiffrement des données
+* Moyens pour garantir la confidentialité, l'intégrité, la disponibilité et la résilience constante
+* * procédure de test et d'analyse des outils mis en place de manière répétitifs (audit permanent)</p>
+<h1 id="les-responsabilites-du-responsable-du-traitement">Les responsabilités du responsable du traitement</h1>
+<p><strong>Quelles questions se posent avant de mettre en place une stratégie sécurité des DCP ?</strong> 
+* Les utilisateurs sont-ils sensibilisés aux règles de sécurité ?
+* Les utilisateurs ont-ils des login particulier (peut-on identifier l'utilisateur ?)
+* les postes de travail sont ils sécurisés par des mots de passe ?
+* l'informatique mobile est-elle sécurisée ?
+* le réseau est-il sécurisé ?
+* Des sauvegardes existent-elles ?
+* l'activité des sous-traitants est-elle encadrée ?</p>
+<p>Que faire en cas de violations des DCP ?
+1) Appliquer une procédure spécifique avec une grande réactivité ?
+2) impliquer tous les métiers et interlocuteurs (transparence) ?
+3) Tenir un registre des incidents et des mesures de remédiations !</p>
+<p>=&gt; Déterminer si la violation est susceptible d'engendrer un risque pour les droits  et libertés des entreprises !</p>
+<p>En matière de sécurité des DCP, l'enteprise et le responsable du traitement ne sont tenu qu'à une obligation de moyens =&gt; faire tout le nécessaire pour protéger les DCP.</p>
+<h1 id="obligation-relative-aux-mots-de-passe">Obligation relative aux mots de passe</h1>
+<p>1) Sécurisation de l'authentification : L'authentification doit faire appel à  des mots de passe difficilement déchiffrables
+2) Conservation des mots de passe : Pas de stockage en claire, transformation par le biais de fonctions cryptographiques non réversibles
+3) renouvellement de mot de passe : Le renouvellement doit etre adapté (durée et complexité) en fonction des données auquels il donne acc_s. Si accès à des données sensibles :prériodicité plus courte et complexité plus grande =&gt; le speronnes (nommées doivent êtr een mesure de changer seuls leur mot de passe)</p>
+<h2 id="compromission-du-mot-de-passe">Compromission du mot de passe</h2>
+<ul>
+<li>Notification à la personne concernée sous 72h</li>
+<li>obligation de changer le mot de passe</li>
+<li>recommandantion de chaner les mots de passe d'autres services</li>
+</ul>
+<h1 id="les-zonnes-de-commentaire-libre">Les zonnes de commentaire libre</h1>
+<ul>
+<li>blocnotes; post it numérique; mots; commentaires; remarques, champs de saisies libres; =&gt; toutes ces choses sont soumises au RGPD</li>
+<li>En utilisant ces zones de commentaire partagé, il faut absolument éviter les termes péjoratifs, peu flatteurs, injurieux, négatifs. Le conditionnel, le sens ambigüe ou évasifs.</li>
+</ul>
+<h1 id="sanctions-administratives">sanctions administratives</h1>
+<ul>
+<li>Degré 1 : Avertissement =&gt; Dans ce cas l'entreprise fait l'objet d'un simple rappel à l'ordre (présemption de bonne foi)</li>
+<li>Degré 2 : injonction de cesser le traitement des DCP non conforme au RGPD</li>
+<li>Degré 3 : en cas sanction administrative (arrêt du traitement de donnée non conforme RGPD)</li>
+<li>Degré 4 : Publication de la condamnation sur la pge web de l'entreprise ou via les médias</li>
+</ul>
+<h1 id="sanctions-pecuniaires">sanctions pécuniaires</h1>
+<p>=&gt; le RGPD prévoit des amendes allant jusqu'à 20 000 000€ ou 4% du chiffre d'affaire mondial
+=&gt; sanctions pénales : la LiL (loi informatique et liberté) prévoit un certain nombre de sanctions pénales en cas de traitemetn fauduleux des DCP (3 ans de prison; 300 000€ d'ammendes)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../exploitation_base_de_donne/" class="btn btn-neutral float-right" title="L'exploitation de base de données">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../STMicroelectronics/" class="btn btn-neutral" title="STMicroelectronics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../STMicroelectronics/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../exploitation_base_de_donne/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

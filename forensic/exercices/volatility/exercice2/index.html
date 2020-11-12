@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../../img/favicon.ico">
+  <title>Forensic exercice 2 - Volatility - Cours - GJ enterprise</title>
+  <link rel="stylesheet" href="../../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Forensic exercice 2 - Volatility";
+    var mkdocs_page_input_path = "forensic/exercices/volatility/exercice2.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../../.." class="icon icon-home"> Cours - GJ enterprise</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../..">Welcome to courses website</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">cloud & IOT</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../cloud_&_IOT/cloud_computing/">Cloud computing</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Forensic</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../Evidence/">Evidence</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../autopsy/">Autopsy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cours_forensic/">Forensic</a>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Exercices</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../dump_mem_disk/">Dump mémoire et disque dur</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <span class="caption-text">Volatility</span>
+    <ul class="subnav">
+                <li class="toctree-l4 current">
+                    
+    <a class="current" href="./">Forensic exercice 2 - Volatility</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l5"><a href="#forensic-exercice-2-volatility">Forensic exercice 2 - Volatility</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l6" href="#by-julien-faou">By Julien Faou</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l5"><a href="#invetigation">Invetigation</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l6" href="#imageinfo">imageinfo</a></li>
+        
+            <li><a class="toctree-l6" href="#connexions">connexions</a></li>
+        
+            <li><a class="toctree-l6" href="#pslist">pslist</a></li>
+        
+            <li><a class="toctree-l6" href="#analyse-de-malware">Analyse de malware</a></li>
+        
+            <li><a class="toctree-l6" href="#commandline">commandline</a></li>
+        
+            <li><a class="toctree-l6" href="#memdump">memdump</a></li>
+        
+            <li><a class="toctree-l6" href="#checker-les-process-au-demarage">Checker les process au demarage</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Management</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../management/STMicroelectronics/">STMicroelectronics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../management/donnes_personnelles/">Comment traiter les données collectées ?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../management/exploitation_base_de_donne/">L'exploitation de base de données</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../management/proteger_le_travail/">Proteger le travail</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Memoire entreprise</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../memoire_entreprise/instruction_memoire_entreprise/">Instruction memoire entreprise</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Methodologie pentest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../methodologie_pentest/cours/">Enumération passive</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../methodologie_pentest/cyberwings/">Collect email</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../methodologie_pentest/methodologie_pentest/">Méthodologie de pentest</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">ISSAF</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../methodologie_pentest/ISSAF/DE-ICE-110/">DE-ICE-110 - Pentest</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../methodologie_pentest/ISSAF/GoldenEye-V1/">GoldenEye V1</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../methodologie_pentest/ISSAF/template_ISSAF/">Méthodologie template - Pentest</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercices</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../../methodologie_pentest/exercices/sectools.org/">Sectools.org</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reseaux industriels</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../reseaux_industriels/grafcet/">Graphset</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../../reseaux_industriels/reseaux_industriel/">Réseaux industriels</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercice</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Grafcet</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../../reseaux_industriels/exercice/grafcet/grafcet_instructions/">Grafcet instructions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Modbus</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../../reseaux_industriels/exercice/modbus/exercice_modbus/">Exercices modbus</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">securité IOT</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../../securité_IOT/cours/">Cours</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../..">Cours - GJ enterprise</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Volatility &raquo;</li>
+        
+      
+        
+          <li>Exercices &raquo;</li>
+        
+      
+        
+          <li>Forensic &raquo;</li>
+        
+      
+    
+    <li>Forensic exercice 2 - Volatility</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="forensic-exercice-2-volatility">Forensic exercice 2 - Volatility</h1>
+<h3 id="by-julien-faou">By Julien Faou</h3>
+<h1 id="invetigation">Invetigation</h1>
+<h2 id="imageinfo">imageinfo</h2>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem imageinfo
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : WinXPSP2x86, WinXPSP3x86 (Instantiated with WinXPSP2x86)
+                     AS Layer1 : IA32PagedMemoryPae (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/home/kali/Documents/forensic/exercice/exo2.vmem)
+                      PAE type : PAE
+                           DTB : 0x2fe000L
+                          KDBG : 0x80545ae0L
+          Number of Processors : 1
+     Image Type (Service Pack) : 3
+                KPCR for CPU 0 : 0xffdff000L
+             KUSER_SHARED_DATA : 0xffdf0000L
+           Image date and time : 2012-07-22 02:45:08 UTC+0000
+     Image local date and time : 2012-07-21 22:45:08 -0400
+</code></pre>
+
+<h2 id="connexions">connexions</h2>
+<h3 id="sockets">sockets</h3>
+<h3 id="connscan">connscan</h3>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem --profile=WinXPSP2x86 connscan
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+Offset(P)  Local Address             Remote Address            Pid
+---------- ------------------------- ------------------------- ---
+0x02087620 172.16.112.128:1038       41.168.5.140:8080         1484
+0x023a8008 172.16.112.128:1037       125.19.103.198:8080       1484
+</code></pre>
+
+<ul>
+<li>2 connexions détectées, on note les adresses IP de destination et les PID.</li>
+</ul>
+<h3 id="localisation">Localisation</h3>
+<ul>
+<li>Via le site hostip.com</li>
+</ul>
+<pre><code>45.84.52.160
+</code></pre>
+
+<pre><code>Afrique du sud
+Gauteng
+Johannesburg
+</code></pre>
+
+<pre><code>125.19.103.198
+</code></pre>
+
+<pre><code>France
+Paris
+</code></pre>
+
+<h2 id="pslist">pslist</h2>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem --profile=WinXPSP2x86 pslist
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+Offset(V)  Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          
+---------- -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------
+0x823c89c8 System                    4      0     53      240 ------      0                                                              
+0x822f1020 smss.exe                368      4      3       19 ------      0 2012-07-22 02:42:31 UTC+0000                                 
+0x822a0598 csrss.exe               584    368      9      326      0      0 2012-07-22 02:42:32 UTC+0000                                 
+0x82298700 winlogon.exe            608    368     23      519      0      0 2012-07-22 02:42:32 UTC+0000                                 
+0x81e2ab28 services.exe            652    608     16      243      0      0 2012-07-22 02:42:32 UTC+0000                                 
+0x81e2a3b8 lsass.exe               664    608     24      330      0      0 2012-07-22 02:42:32 UTC+0000                                 
+0x82311360 svchost.exe             824    652     20      194      0      0 2012-07-22 02:42:33 UTC+0000                                 
+0x81e29ab8 svchost.exe             908    652      9      226      0      0 2012-07-22 02:42:33 UTC+0000                                 
+0x823001d0 svchost.exe            1004    652     64     1118      0      0 2012-07-22 02:42:33 UTC+0000                                 
+0x821dfda0 svchost.exe            1056    652      5       60      0      0 2012-07-22 02:42:33 UTC+0000                                 
+0x82295650 svchost.exe            1220    652     15      197      0      0 2012-07-22 02:42:35 UTC+0000                                 
+0x821dea70 explorer.exe           1484   1464     17      415      0      0 2012-07-22 02:42:36 UTC+0000                                 
+0x81eb17b8 spoolsv.exe            1512    652     14      113      0      0 2012-07-22 02:42:36 UTC+0000                                 
+0x81e7bda0 reader_sl.exe          1640   1484      5       39      0      0 2012-07-22 02:42:36 UTC+0000                                 
+0x820e8da0 alg.exe                 788    652      7      104      0      0 2012-07-22 02:43:01 UTC+0000                                 
+0x821fcda0 wuauclt.exe            1136   1004      8      173      0      0 2012-07-22 02:43:46 UTC+0000                                 
+0x8205bda0 wuauclt.exe            1588   1004      5      132      0      0 2012-07-22 02:44:01 UTC+0000
+</code></pre>
+
+<h3 id="correlation">Correlation</h3>
+<ul>
+<li>Observons le process de PID=1484, pour rappel ce dernier établit deux connexions vers l'afrique et la france.</li>
+</ul>
+<pre><code>0x821dea70 explorer.exe           1484   1464     17      415      0      0 2012-07-22 02:42:36 UTC+0000                                 
+</code></pre>
+
+<ul>
+<li><strong>explorer.exe</strong> est l'explorateur de fichier de windows, il 'nest pas censé utiliser internet, c'est suspect.</li>
+</ul>
+<h2 id="analyse-de-malware">Analyse de malware</h2>
+<h3 id="malfind">malfind</h3>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem --profile=WinXPSP2x86 malfind -p 1484
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+Process: explorer.exe Pid: 1484 Address: 0x1460000
+Vad Tag: VadS Protection: PAGE_EXECUTE_READWRITE
+Flags: CommitCharge: 33, MemCommit: 1, PrivateMemory: 1, Protection: 6
+
+0x01460000  4d 5a 90 00 03 00 00 00 04 00 00 00 ff ff 00 00   MZ..............
+0x01460010  b8 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00   ........@.......
+0x01460020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0x01460030  00 00 00 00 00 00 00 00 00 00 00 00 e0 00 00 00   ................
+
+0x01460000 4d               DEC EBP
+0x01460001 5a               POP EDX
+0x01460002 90               NOP
+0x01460003 0003             ADD [EBX], AL
+0x01460005 0000             ADD [EAX], AL
+0x01460007 000400           ADD [EAX+EAX], AL
+0x0146000a 0000             ADD [EAX], AL
+0x0146000c ff               DB 0xff
+0x0146000d ff00             INC DWORD [EAX]
+0x0146000f 00b800000000     ADD [EAX+0x0], BH
+0x01460015 0000             ADD [EAX], AL
+0x01460017 004000           ADD [EAX+0x0], AL
+0x0146001a 0000             ADD [EAX], AL
+0x0146001c 0000             ADD [EAX], AL
+0x0146001e 0000             ADD [EAX], AL
+0x01460020 0000             ADD [EAX], AL
+0x01460022 0000             ADD [EAX], AL
+0x01460024 0000             ADD [EAX], AL
+0x01460026 0000             ADD [EAX], AL
+0x01460028 0000             ADD [EAX], AL
+0x0146002a 0000             ADD [EAX], AL
+0x0146002c 0000             ADD [EAX], AL
+0x0146002e 0000             ADD [EAX], AL
+0x01460030 0000             ADD [EAX], AL
+0x01460032 0000             ADD [EAX], AL
+0x01460034 0000             ADD [EAX], AL
+0x01460036 0000             ADD [EAX], AL
+0x01460038 0000             ADD [EAX], AL
+0x0146003a 0000             ADD [EAX], AL
+0x0146003c e000             LOOPNZ 0x146003e
+0x0146003e 0000             ADD [EAX], AL
+</code></pre>
+
+<ul>
+<li>Ce process a bien été modifié par un autre process. malfind le sait grâce aux flags </li>
+</ul>
+<pre><code>Flags: CommitCharge: 33, MemCommit: 1, PrivateMemory: 1, Protection: 6
+</code></pre>
+
+<h3 id="virus-total">Virus total</h3>
+<ul>
+<li>Dumpons le programme douteux</li>
+</ul>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem --profile=WinXPSP2x86 procdump --dump-dir .  -p 1484
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+Process(V) ImageBase  Name                 Result
+---------- ---------- -------------------- ------
+0x821dea70 0x01000000 explorer.exe         OK: executable.1484.exe
+</code></pre>
+
+<ul>
+<li>Envoyons le à Virus total</li>
+</ul>
+<p><img alt="" src="./images/virustotal.png" /></p>
+<h3 id="yara-rules">Yara rules</h3>
+<p>FUCK</p>
+<h2 id="commandline">commandline</h2>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem --profile=WinXPSP2x86 cmdline
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+************************************************************************
+System pid:      4
+************************************************************************
+smss.exe pid:    368
+Command line : \SystemRoot\System32\smss.exe
+************************************************************************
+csrss.exe pid:    584
+Command line : C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestThreads=16
+************************************************************************
+winlogon.exe pid:    608
+Command line : winlogon.exe
+************************************************************************
+services.exe pid:    652
+Command line : C:\WINDOWS\system32\services.exe
+************************************************************************
+lsass.exe pid:    664
+Command line : C:\WINDOWS\system32\lsass.exe
+************************************************************************
+svchost.exe pid:    824
+Command line : C:\WINDOWS\system32\svchost -k DcomLaunch
+************************************************************************
+svchost.exe pid:    908
+Command line : C:\WINDOWS\system32\svchost -k rpcss
+************************************************************************
+svchost.exe pid:   1004
+Command line : C:\WINDOWS\System32\svchost.exe -k netsvcs
+************************************************************************
+svchost.exe pid:   1056
+Command line : C:\WINDOWS\system32\svchost.exe -k NetworkService
+************************************************************************
+svchost.exe pid:   1220
+Command line : C:\WINDOWS\system32\svchost.exe -k LocalService
+************************************************************************
+explorer.exe pid:   1484
+Command line : C:\WINDOWS\Explorer.EXE
+************************************************************************
+spoolsv.exe pid:   1512
+Command line : C:\WINDOWS\system32\spoolsv.exe
+************************************************************************
+reader_sl.exe pid:   1640
+Command line : &quot;C:\Program Files\Adobe\Reader 9.0\Reader\Reader_sl.exe&quot; 
+************************************************************************
+alg.exe pid:    788
+Command line : C:\WINDOWS\System32\alg.exe
+************************************************************************
+wuauclt.exe pid:   1136
+Command line : &quot;C:\WINDOWS\system32\wuauclt.exe&quot; /RunStoreAsComServer Local\[3ec]SUSDSb81eb56fa3105543beb3109274ef8ec1
+************************************************************************
+wuauclt.exe pid:   1588
+Command line : &quot;C:\WINDOWS\system32\wuauclt.exe&quot;
+</code></pre>
+
+<h2 id="memdump">memdump</h2>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ ./volatility_2.6_lin64_standalone -f ../exercice/exo2.vmem --profile=WinXPSP2x86 memdump --dump-dir .  -p 1484
+</code></pre>
+
+<pre><code>Volatility Foundation Volatility Framework 2.6
+************************************************************************
+Writing explorer.exe [  1484] to 1484.dmp
+</code></pre>
+
+<h3 id="grep-sur-1484dmp">grep sur 1484.dmp</h3>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ strings 1484.dmp | grep -Fi &quot;41.168.5.140&quot; -C 10
+</code></pre>
+
+<pre><code>DpI8
+POST /zb/v_01_a/in/ HTTP/1.1
+Accept: */*
+User-Agent: Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)
+Host: 41.168.5.140:8080
+Content-Length: 229
+Connection: Keep-Alive
+Cache-Control: no-cache
+&gt;mtvR
+`06!
+</code></pre>
+
+<ul>
+<li>
+<p>On trouve un POST sur l'IP <strong>41.168.5.140</strong></p>
+</li>
+<li>
+<p>Dans le dump d'abode reader on retrouve le même POST !</p>
+</li>
+</ul>
+<pre><code>kali@kali:~/Documents/forensic/volatility_2.6_lin64_standalone$ strings 1484.dmp | grep -Fi &quot;/zb/v_01_a/in/&quot; -C 10
+</code></pre>
+
+<pre><code>*BusinessAppsHome*
+*nab.com.au*
+*us.hsbc.com*
+*online.citibank.com/*
+*BalanceHome*
+*PassmarkChallenge*
+*ktt.key.com*
+*cm.netteller.com*
+*/Web_Bank*
+*jqueryaddonsv2.js*
+http://188.40.0.138:8080/zb/v_01_a/in/cp.php
+*account.authorize.net/*
+&lt;head*&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+body { visibility: hidden; }
+.ui-dialog-titlebar { display:none
+</code></pre>
+
+<ul>
+<li>On découvre une nouvelle adresse IP : <strong>188.40.0.138:8080</strong></li>
+</ul>
+<p>passivedns.mnemonic.no</p>
+<h2 id="checker-les-process-au-demarage">Checker les process au demarage</h2>
+<pre><code>printkey -K &quot;software\Microsoft\Windows\Currentversion\Run&quot;
+</code></pre>
+
+<pre><code>Registry: \Device\HarddiskVolume1\Documents and Settings\Robert\NTUSER.DAT
+Key name: Run (S)
+Last updated: 2012-07-22 02:31:51 UTC+0000
+
+Subkeys:
+
+Values:
+REG_SZ        KB00207877.exe  : (S) &quot;C:\Documents and Settings\Robert\Application Data\KB00207877.exe&quot;
+</code></pre>
+
+<pre><code>strings 1640.dmp | grep -Fi &quot;KB00207877.exe&quot;
+</code></pre>
+
+<pre><code>KB00207877.exe
+C:\Documents and Settings\Robert\Application Data\KB00207877.exe(,
+KB00207877.EXEn
+KB00207877.exe
+KB00207877.exe
+C:\Documents and Settings\Robert\Application Data\KB00207877.exe(,
+</code></pre>
+
+<ul>
+<li>La conclusion qu'on pourrait en tirer c'est que l'user a téléchargé un patch (la KB qui sont des mises à jours de windows) en pensant régler le problème.
+Les KB ne sont pas censés être au démarrage, dès qu'elles ont installés elles ne sont plus actives et partent dans l'historique des KB.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../../management/STMicroelectronics/" class="btn btn-neutral float-right" title="STMicroelectronics">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../dump_mem_disk/" class="btn btn-neutral" title="Dump mémoire et disque dur"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../dump_mem_disk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../../management/STMicroelectronics/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../../..';</script>
+    <script src="../../../../js/theme.js" defer></script>
+      <script src="../../../../search/main.js" defer></script>
+
+</body>
+</html>
