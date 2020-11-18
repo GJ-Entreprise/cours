@@ -37,3 +37,5 @@ Tous les industriels du monde entier connaissent ce modèle.
 
 ![](images/model_purdue.png)
 
+![](images/CIM_89_1.png)
+![](images/CIM_89_2.png)
