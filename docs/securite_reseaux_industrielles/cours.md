@@ -23,7 +23,7 @@ __La configuration du site peut-être de deux formes :__
 
 * __Début de l'ère industrielle -> concentration des efforts d'ingéniérie sur des méthodes permettant d'optimiser les processus de fabrication (redondance équipements -> pb de porte-monnaie, ne pas perdre d'argent à cause d'une prod défaillante -> resillience industrielle). Optimisation des méthodes de stockage des matières premières ou produits finis (flux tendu)__
 
-* __Début 1900 => premières normes environnementales : premier crash pétrolier =>  nécésité de réfléchir à modifier l'approche purement optimisation économique dans la conception des usines (installation industrielles) -> arrivée de l'informatique
+* __Début 1900 => premières normes environnementales : premier crash pétrolier =>  nécésité de réfléchir à modifier l'approche purement optimisation économique dans la conception des usines (installation industrielles) -> arrivée de l'informatique__
 
 Début des travaux : 1970, première version livrée et exploiter : 1980
 Américains, qui créé le modéle Purdue :
