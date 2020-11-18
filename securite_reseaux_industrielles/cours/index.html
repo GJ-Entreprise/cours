@@ -187,6 +187,10 @@
                     
     <a class="" href="../../methodologie_pentest/wiki/pentesting_ftp/">Pentesting FTP</a>
                 </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../methodologie_pentest/wiki/privilege_escalation/">Gather system informations</a>
+                </li>
     </ul>
                 </li>
     </ul>
@@ -251,6 +255,12 @@
             <li><a class="toctree-l4" href="#installation-industrielle">Installation industrielle</a></li>
         
             <li><a class="toctree-l4" href="#travaux-du-passe-sur-la-securite-des-reseaux-infustriels-et-installations-industrielles">Travaux du passé sur la sécurité des réseaux infustriels et installations industrielles</a></li>
+        
+            <li><a class="toctree-l4" href="#nomenclature-icpe-rubriques-permettant-de-classer-la-nature-du-risque">Nomenclature ICPE : Rubriques permettant de classer la nature du risque</a></li>
+        
+            <li><a class="toctree-l4" href="#sevesco">SEVESCO</a></li>
+        
+            <li><a class="toctree-l4" href="#anssi">ANSSI</a></li>
         
         </ul>
     
@@ -343,6 +353,74 @@ Tous les industriels du monde entier connaissent ce modèle.</p>
 <p><img alt="" src="../images/model_purdue.png" /></p>
 <p><img alt="" src="../images/CIM_89_1.png" />
 <img alt="" src="../images/CIM_89_2.png" /></p>
+<p><strong>ICPE</strong> : Nomenclature
+<strong>SEVESO</strong> : Classification</p>
+<p>Ces deux éléments sont issus de la règlementation française.</p>
+<h2 id="nomenclature-icpe-rubriques-permettant-de-classer-la-nature-du-risque">Nomenclature ICPE : Rubriques permettant de classer la nature du risque</h2>
+<ul>
+<li>Substances (toxiques, comburants, explosivité, combustible, corrosion, réactions/précipitations chimiques)</li>
+<li>activités (agriculture, élevage, agroalimentaire, textie, papier, carton, minerais, chimie, plastique, déchets)</li>
+<li>émissions industrielles : en fonction des rejets, nécessité de recourir aux meilleures techniques existantes afin de prévenir toute pollution environnementale.</li>
+</ul>
+<p>L'entreprise remplit un formulaire ICPE lorsqu'elle a une activité industrielle, ce formulaire est transmis au préfet.
+Le préfet transmet à l'état ce formulaire avec avis.
+L'état qui donne l'autorisation d'exploiter, si les méthodes de dépollution permettent d'atteindre les VLE (Valeurs Limites d'émission)</p>
+<ul>
+<li>Plusieurs sites de prod = <strong>plusieurs formulaires ICPE.</strong></li>
+</ul>
+<h2 id="sevesco">SEVESCO</h2>
+<h3 id="niveau-de-classement">Niveau de classement</h3>
+<ul>
+<li><strong>NC</strong> (Non Classé) : Le activités sont sous le seuil de pollution ou de dangerosité de la nomenclature ICPE.</li>
+<li><strong>D</strong> (Déclaration) : L'installation ICPE, doit faire l'objet d'une déclaration au préfet avant la mise en service du site de production (Le risque est acceptable si l'entreprise suit les prescriptions nationales).</li>
+<li><strong>DC</strong> (Déclaration Contrôlée) : Déclaratif au préfet + un contrôle et un audit régulier par un organisme externe.</li>
+<li><strong>E</strong> (Enregistrement) : Avant la mise en service, l'entreprise a monté un dossier SEVESO, ce statut indique que le dossier est en cours de traitement par les services de l'état. Le préfet demande un audit extérieur pour vérifier que le dossier est dans les clous des préconisations nationales</li>
+<li><strong>A</strong> (Autorisation) : D/DC. Le préfet a statué par arrêté préfectoral au cas par cas de l'autorisation SEVESO (pour les sites non-classés)</li>
+<li><strong>AS</strong> (Autorisation avec Servitude) : risques technologiques élevés  dépassant les seuils maximums de dangerosité et/ou de rejets autorisés par l'état. Les seuils dépassés sont autorisés parce que le site de production est considéré comme d'utilité publique. Dans ce cas il sera impossible d'installer d'autres sites industriels ou habitations personnelles à proximité. </li>
+</ul>
+<p><strong>Entre 1993 et 2014, les états européens ont mis en oeuvre les lois de programmation militaire ENISA (2014-2019 France).</strong></p>
+<ul>
+<li>
+<p><strong>Loi</strong> : Précise la responsabilité des états de définir et d'assurer une cybersécurité suffisante des systèmes critiques des opérateurs d'importance vitale (OIV). Par extension, la responsabilité de définir les bonnes pratiques pour toute entreprise opérant avec des systèmes d'information.</p>
+</li>
+<li>
+<p><strong>SAIV</strong> : Secteurs d'activités d'importance vitale (article R1332-2 loi programmation)</p>
+</li>
+<li><strong>PIV</strong> : Point d'importance vitale (Site), font l'objet d'audits constants concernant la sécurité physique et la mise en oeuvre de contre-mesures à chaque risque potentiel evalué.</li>
+<li><strong>OIV</strong> : Opérateur d'importance vitale (Entreprise) R1331-1 loi militaire : Organisation qui exerce des activités comprises dans un secteur d'importance. Gère des établissements ou des ouvrages dont le dommage ou l'indisponnibilité (ou la destruction) à la suite de malveillance, de sabotage, de terrorrisme pourrait directement ou indirectement altérer gravement le potentiel de guerre, économique, la sécurité ou la survie du pays, ou encore mettre gravement en danger la santé de la population. Les ministres vont fixer les OIV pour chaque ministère qu'ils gèrent.</li>
+</ul>
+<p><strong>C'est en France, le premier ministre qui décide des SAIV</strong></p>
+<h2 id="anssi">ANSSI</h2>
+<p><strong>ANSSI a fait un effort de classification, qui sont des modèles complémentaires à SEVESO, OIV, PIV et qui permmettent de gérer/plannifier la sécurité d'une entreprise critique ou d'un secteur critique :</strong></p>
+<ul>
+<li>
+<p><strong>Type A1</strong> : Chaîne de procédé (atelier automatisé -&gt; purdue niveau 0 et 1). 1 seul site qui crée son produit final de bout en bout. l'accès aux systèmes numériques de prod (supervision, commande, maintenance) implique un raccordement à des réseaux extérieurs, ou un accès physique -&gt; Attention : Contrôle d'accès physique (tracabilité), si des tiers interviennent, un contrôle spécifique. Recommande des IDS pour les connexions réseaux. Mise à jour des firmwares systématique, obligation de contrôler l'absence de malware.</p>
+</li>
+<li>
+<p><strong>Type A2</strong>: Site de maintenance d'équipements (purdue 0,1,2) : zone(s) de stockage de pièces détachées + une partie des sites A1, mises à jour de firmware, adaptation de certains équipements en fonction des conditions. Recommendations : Accès physique / tracabilité des tiers, IDS, contrôle de la validité des firmwares + contrôle del'absence de malwares</p>
+</li>
+<li>
+<p><strong>Super A</strong>: Installation industrielle distribuée à logistique semi-automatisée (purdue 0 à 4) production répartie sur plusieurs sites (plus ou moins distants), la logistique entre site est semi-automatisée. Contiennent des sites A1, des zones de stockage (produits intermédiaires), les sites A2. Recommendations : Très forte nécessité de chiffrer tout le traffic entre les sites. Tracabilité des mouvements de produits entre sites, IDS, contrôle + MàJ des firmwares y compris de tous les IoT de la chaîne de transport. Communication IoT + du reste des sites de prod est intégralement chiffré .séparation des communications (VLANs, pas de communication autorisées entre sites, sauf pour les besoins de la chaîne de prod et de la chaîne IoT).</p>
+</li>
+<li>
+<p><strong>B1</strong> : Bâtiment fixe. Bâtiment nécessitant un approvisionnement en eau , énergie, disposant d'une évacuation de déchets, autonimie maximale recherchée (datacenter, défense nationale -&gt; OIV). Recommendations : Sécurité physique paranoïaque, surtout sur la partie industrielle. Exemple : building avec des salariés. Ventilation/clim/eau potable/ascenseurs -&gt; garantir le bon fonctionnement, la résilience de ces systèmes.</p>
+</li>
+<li>
+<p><strong>B2</strong> : Bâtiments mobiles se déplaçant ou pouvant se déplacer et dont le déplacement est nécessaire à leur mission. La notion de sécurité des personnes est accrue -&gt; Sous marin, le plus important sera d'évacuer les occupants en cas de cyberattaque paralysant les systèmes du sous-marin. Le bâtiment mobie doit disposer en tous temps et toute circonstance de moyens lui permettant de communiquer.</p>
+</li>
+<li>
+<p><strong>B3</strong> : Bâtiment mobile réparti. Comme un B1, mais son périmètre est plus étendu qu'un bâtiment, par exemple toute l'automatisation d'une ville (signalisation, caméras, éclairage public, smartgrid, routes à accès contrôlé -plots-, relais télécommandés, centres de contrôle etc...). Recommendations : Hardening fort sur les communications sans fil ou à distance. hardening des accès physique aux relais de télécommunication.</p>
+</li>
+<li>
+<p><strong>Super B</strong> : installation massivement répartie à échelle d'un pays ou un continent (par ex trafic aérien). Recommendations : hardening des communications, contrôle paranoïaque de la sécurité.</p>
+</li>
+<li>
+<p><strong>C1</strong> : Equipements sans prépondérance logicielle mais à rique numérique -&gt; fourniture de services à la population, exposé à un risque(s) numérique(s), ex : centrale nucléaire. -&gt; sensibilisation aux risques informatiques y compris les accès physiques, entrainements réguliers (mise en situation des salariéss, équipe informatique : SOC/NOC/CSIRT), Nouveau : Mise en place de système de détection comportementale.</p>
+</li>
+<li>
+<p><strong>C2</strong> : Réseaux de distribution, achemine des fluides d'un point A à un point B. risques sur la chaîne de transport. Attention : la sécurité est du ressort de l'ANSSI qui ne communique pas sur le sujet.</p>
+</li>
+</ul>
               
             </div>
           </div>
