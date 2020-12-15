@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>FAOU_Julien_Stuxnet - Cours - GJ enterprise</title>
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "FAOU_Julien_Stuxnet";
+    var mkdocs_page_input_path = "forensic/stuxnet/Julien_Faou_Stuxnet.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Cours - GJ enterprise</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">cloud & IOT</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cloud_&_IOT/cloud_computing/">Cloud computing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cloud_&_IOT/cours/">FAOU_Julien_Stuxnet</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Forensic</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../autopsy/">Autopsy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../cours_forensic/">Forensic</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Evidence</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../evidence/Evidence/">Evidence</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../evidence/FAOU_Julien_Evidence/">FAOU_Julien_Evidence</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercices</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../exercices/dump_mem_disk/">Dump mémoire et disque dur</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Volatility</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../exercices/volatility/exercice2/">Forensic exercice 2 - Volatility</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Stuxnet</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">FAOU_Julien_Stuxnet</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#travail-a-realiser">Travail à réaliser</a></li>
+    
+
+    <li class="toctree-l4"><a href="#reponses">Réponses</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#question-a">Question A</a></li>
+        
+            <li><a class="toctree-l5" href="#question-b">Question B</a></li>
+        
+            <li><a class="toctree-l5" href="#question-c">Question C</a></li>
+        
+            <li><a class="toctree-l5" href="#question-d">Question D</a></li>
+        
+            <li><a class="toctree-l5" href="#question-e">Question E</a></li>
+        
+            <li><a class="toctree-l5" href="#question-f">Question F</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l4"><a href="#sources">Sources</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Management</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../management/Partiel_droit_Julien_Faou/">Partiel droit</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../management/STMicroelectronics/">STMicroelectronics</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../management/donnes_personnelles/">Comment traiter les données collectées ?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../management/exploitation_base_de_donne/">L'exploitation de base de données</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../management/proteger_le_travail/">Proteger le travail</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Memoire entreprise</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../memoire_entreprise/instruction_memoire_entreprise/">Instruction memoire entreprise</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Methodologie pentest</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../methodologie_pentest/cours/">Enumération passive</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../methodologie_pentest/cyberwings/">Collect email</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../methodologie_pentest/methodologie_pentest/">Méthodologie de pentest</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">ISSAF</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../methodologie_pentest/ISSAF/DE-ICE-110/">DE-ICE-110 - Pentest</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../methodologie_pentest/ISSAF/GoldenEye-V1/">GoldenEye V1</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../methodologie_pentest/ISSAF/template_ISSAF/">Méthodologie template - Pentest</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercices</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../methodologie_pentest/exercices/sectools.org/">Sectools.org</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Wiki</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../methodologie_pentest/wiki/pentesting_ftp/">Pentesting FTP</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../methodologie_pentest/wiki/privilege_escalation/">Gather system informations</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reseaux industriels</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../reseaux_industriels/grafcet/">Graphset</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../reseaux_industriels/reseaux_industriel/">Réseaux industriels</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Exercice</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Grafcet</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../reseaux_industriels/exercice/grafcet/grafcet_instructions/">Grafcet instructions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <span class="caption-text">Modbus</span>
+    <ul class="subnav">
+                <li class="toctree-l4">
+                    
+    <a class="" href="../../../reseaux_industriels/exercice/modbus/exercice_modbus/">Exercices modbus</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Securite reseaux industrielles</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../securite_reseaux_industrielles/cours/">Securité des réseaux industriels</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">securité IOT</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../securité_IOT/cours/">Cours</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Cours - GJ enterprise</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Stuxnet &raquo;</li>
+        
+      
+        
+          <li>Forensic &raquo;</li>
+        
+      
+    
+    <li>FAOU_Julien_Stuxnet</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><img alt="stuxnet" src="/OSCP-Exam-Report-Template-Markdown-master/src/images/stuxnet.png" /></p>
+<h1 id="travail-a-realiser">Travail à réaliser</h1>
+<p>A) Résumer en une vingtaine de lignes maximum en quoi a consisté l'attaque stuxnet. (Vous passerez par ce faire par la fameuse métode QQOQCP: Quoi/Qui/Où/Quand/Comment/Pourquoi)</p>
+<p>B) Si le site principal visé était classé SEVESO, quel serait sont classement et pourquoi?</p>
+<p>C) De quel type de site industriel parle t'on (au sens des définitions vues dans le cours)?</p>
+<p>D) Quels sont les niveaux du modèle purdue qui sont atteints par cette attaque?</p>
+<p>E) Quelles sont les mesures de sécurité qui auraeint du être mises en place et ne l'on pas été? Quels sont les niveaux du modèle purdue qui auraient été mieux protégés pour chacune des mesures que vous énnoncez?</p>
+<p>F) En complétant le contenu proposé par vos propres recherches, et en citant vos sources, la payload utilisée pour cette attaque sur les installation Iranienne s'est elle propagée sur d'autres sites? Y a t'il eu une évolution de cette attaque qui a vu le jour par la suite? </p>
+<h1 id="reponses">Réponses</h1>
+<h2 id="question-a">Question A</h2>
+<h3 id="quoi">Quoi ?</h3>
+<p>Stuxnet est le nom donné à la toute première cyberattaque ciblée. Visant les centrifugeuses des centrales nucléaires en Iran, encore inconnu aux yeux du monde, Stuxnet fit sa notoriétée en janvier 2010 avec la découverte du vers. </p>
+<p>Lors d'une inspection d'un site nucléaire, des inspecteurs signalent que les centrifugeuses ont un taux de casse bien trop élevé. Les techniciens ont procédés au remplacement des centrifugeuses, mais le problème persistait. 
+5 mois suivèrent, lorsque lors d'un problème technique sur des ordinateurs, des intervenants ont trouvés de multiples fichiers malicieux. Ceci marque le début de la cybercriminalité avec la toute première arme digitale.</p>
+<h3 id="qui">Qui ?</h3>
+<p>Stuxnet serait une arme digitale développé par la NSA en collaboration avec l'Israel (unité 8200) visant les centrales d'Iran, notamment la centrale de Natanz</p>
+<h3 id="ou">Où ?</h3>
+<p>La cible était une centrale nucléaire du nom de Natanz, situé en Israel</p>
+<p><img alt="localisation" src="/OSCP-Exam-Report-Template-Markdown-master/src/images/localisation.png" /></p>
+<h3 id="quand">Quand ?</h3>
+<p>Stuxnet à débuter en 2007 lors du début de sa conception, l'attentat a eu lieu en 2008, mais découverte seulement en janvier 2010.</p>
+<h3 id="comment">Comment ?</h3>
+<p>L'environement informatique de la centrale visée est isolé du rete du monde, c'est via une clé USB que la NSA, armé de son vers, a pu pénétrer dans la centrale de Natanz. Infectant les ordinateurs, puis les calculateurs siemens des centrifugeuses. Ces calculateurs servait à réguler la vitesse de rotation des centrifugeuses.</p>
+<p>Les attaquants ne sont pas passés directement par la central de Natanz, ils ont utilisés les sous-traitants. 4 entreprises on été la cible de la NSA pour mettre toutes les chance de leurs côtés. Ces entreprises ciblées gérer chacune une partie de la centrale. Il y a eu donc plusieurs versions de stuxnet !</p>
+<p>Ce que la NSA n'avait pas prévu c'est que le virus se répande sur internet, infectant le monde entier.</p>
+<h3 id="pourquoi">Pourquoi ?</h3>
+<p>Stuxnet a provoqué un ralentissement du programme nucléaire iranien de presque 2 ans. Ces centrifugeuses pouvait permettre au pays de fabriquer des armes nucléaires.
+En détruisant ces centrales, la NSA en empêcher l'Etat Iranien de se doter d'une tel arme.</p>
+<h2 id="question-b">Question B</h2>
+<p>Les centrales nucléaires ne sont pas catégorisées par SEVESO mais par l'INB et placé sous le contrôlé de l'ASN.</p>
+<p>Si on devrait la classée dans le classement SEVESO, elle serait "<strong>seuil haut</strong>" =&gt; "soumis à autorisation avec servitude d'utilité publique"</p>
+<p><strong>Définition du cour :</strong> </p>
+<pre><code class="txt">AS (Autorisation et Servitudes) : Risque technologiques élevés, qui s’approchent
+ou dépassent les seuils de dangerosité ou de rejet autorisés par l’état. Les seuils
+dépassés sont autorisés parce que le site de production est considéré d’utilité
+publique. Dans ce cas, il sera impossible d’installer d’autres sites industriels ou
+habitations personnelles à proximité,
+S’il y a déjà des habitations à côté d’un site SEVESO qui dépasse les normes
+alors l’état qualifie l’industrie d’utilité publique et « on fait avec ».
+</code></pre>
+
+<p><img alt="seveso" src="/OSCP-Exam-Report-Template-Markdown-master/src/images/seveso.jpg" /></p>
+<h2 id="question-c">Question C</h2>
+<p>La centrale de Natanz est un site fixe monolithique.</p>
+<h2 id="question-d">Question D</h2>
+<p>Voici les niveaux du modèle CIM89 qui sont touchés par cette attaque : </p>
+<ul>
+<li>Level 5 - Internet DMZ</li>
+<li>Level 4 - Enterprise</li>
+<li>Level 3 - Control center / Processing LAN</li>
+<li>Level 2 - Local HMI LAN</li>
+<li>Level 1 - Controller LAN</li>
+</ul>
+<h2 id="question-e">Question E</h2>
+<ul>
+<li>Désactivation de tout port USB et pas d'ordinateur personnel. - <strong>Level 4 / 3</strong></li>
+<li>Autoriser uniquement les équipements fournits par la centrale</li>
+<li>Limiter les accès des prestataires, en choisir avec des normes de sécurités.</li>
+</ul>
+<h2 id="question-f">Question F</h2>
+<p>Le payload à fuité sur internet, infectant ainsi bien plus que la centrale de Natanz en Iran. Le vers s'est propagés jusqu'à son origine aux Etats unis, le retour de bâton.</p>
+<p>On peut retrouver des versions décompiler du vers : </p>
+<ul>
+<li>https://github.com/micrictor/stuxnet</li>
+</ul>
+<p>Depuis, les systèmes de défenses (anti-virus / IDS / SO / etc) reconnaissent et bloquent de vers.</p>
+<ul>
+<li>https://nmap.org/nsedoc/scripts/stuxnet-detect.html</li>
+</ul>
+<h1 id="sources">Sources</h1>
+<ul>
+<li>
+<p><strong>(WIRED)</strong> https://www.wired.com/2014/11/countdown-to-zero-day-stuxnet/</p>
+</li>
+<li>
+<p><strong>(OBS)</strong> https://www.nouvelobs.com/rue89/rue89-internet/20120604.RUE0433/stuxnet-comment-les-etats-unis-et-israel-ont-pirate-le-nucleaire-iranien.html</p>
+</li>
+<li>
+<p><strong>(SFEN)</strong> https://www.sfen.org/rgn/seveso-protections-centrales</p>
+</li>
+<li>
+<p><strong>(KASPERSKY)</strong> https://www.kaspersky.fr/blog/stuxnet-les-origines/3939/</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../management/Partiel_droit_Julien_Faou/" class="btn btn-neutral float-right" title="Partiel droit">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../exercices/volatility/exercice2/" class="btn btn-neutral" title="Forensic exercice 2 - Volatility"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../exercices/volatility/exercice2/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../management/Partiel_droit_Julien_Faou/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
