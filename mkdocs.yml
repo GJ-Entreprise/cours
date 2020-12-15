@@ -1,2 +1,59 @@
-site_name: Cours - GJ enterprise
-theme: readthedocs
+---
+site_name: Cours
+repo_name: 'Github'
+repo_url: https://gj-entreprise.github.io/cours/
+nav:
+  - Home: index.md
+  - cloud_&_IOT:
+    - Cloud_computing: cloud_&_IOT/cloud_computing.md
+    - Cours: cloud_&_IOT/cours.md
+    - Introduction_reverse: cloud_&_IOT/introduction_reverse.pdf 
+  
+markdown_extensions:
+  - toc:
+      permalink: True
+      baselevel: 1
+  - footnotes
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: "!!python/name:pymdownx.emoji.to_svg"
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - plantuml_markdown:
+      server: http://localhost:8080
+
+theme:
+  name: 'material'
+  # custom_dir: themes/privowny/material
+  language: en
+  feature:
+    tabs: true
+  palette:
+    primary: Blue Grey
+    accent:  Orange
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/privowny.png
+  logo: images/privowny.png
+#    icon: "\uE80C"
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
