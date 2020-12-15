@@ -1,29 +1,6 @@
----
-title: "FAOU_Julien_Stuxnet"
-author: ["Enseignant responsable: Damien Naviliat"]
-date: "2020-12-14"
-subject: "Markdown"
-keywords: [Markdown, Example]
-subtitle: "Julien Faou"
-titlepage: true
-titlepage-color: "FF8C00"
-titlepage-text-color: "FFFAFA"
-titlepage-rule-color: "FFFAFA"
-titlepage-rule-height: 2
-listings-no-page-break: true
-disable-header-and-footer: false
-book: true
-classoption: oneside
-code-block-font-size: \footnotesize
-resource-path: "/OSCP-Exam-Report-Template-Markdown-master/src/"
-extract-media: "/OSCP-Exam-Report-Template-Markdown-master/src/"
----
-
-
 # IOT
 
 On trouve de plus en plus d'bjet IOT qui remonte des infos dans le cloud (camera, badgeuse, capteurs, etc)
-
 
 ## Conception
 
@@ -49,10 +26,21 @@ On trouve de plus en plus d'bjet IOT qui remonte des infos dans le cloud (camera
 
 ## Aperçu technique d'un IOT
 
-![](./images/)
+![](./images/apercu_technique.png)
 
 * FPGA : puce sans rien, au constructeur de programmer la puce. Source de faille mais permet de patcher
 
+Puces de sécurité : processeur crypto + puce de sécurité
+Objectif : fournir les éléments de cryptographie nécessaire à la protection des firmwares et des communication, les algos de crypto sont implémentés physiquement dans les puces de sécurité et exécutés par un processeur dédié aux calculs crypto (décharge le microprocesseur central de ces traitements).
+
+## Failles techniques/physiques
+
+* Failles dues au materiel : beaucoup de type de failles possibles
+* Blindage absent (sensibilité aux rayonnements électromagnetiques)
+* JTAG/GPIO (debug)
+* Interface "série" pour reset l'équipement
+* Bouton reset usine
+* Firmware : OS+logiciels présents sur une mémoire de stockage et chargés au démarrage => quel type de contrôle met-on en oeuvre pour 
 
 
 
