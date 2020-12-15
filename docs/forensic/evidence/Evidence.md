@@ -30,7 +30,7 @@ sudo md5sum /media/sdb1/Windows/disk.raw
 
 # 2 Analyse de la RAM :
 
-Je détermine l'uimage info de la RAM :
+Je détermine l'image info de la RAM :
 ````bash
 /home/student/training/tools/volatility -f /media/sdb1/Windows/memory.img  imageinfo
 ````
@@ -249,7 +249,7 @@ rule xtreme_rat : Trojan
 ````
 
 Identification des processus :
-
+     
 * Process svchost.exe Pid 4888
 * Process explorer.exe Pid 4872
 * Process update.exe Pid 5172
